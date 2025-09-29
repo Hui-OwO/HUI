@@ -71,7 +71,7 @@ body { background-color: var(--surface-default); transition: background-color 0.
 .intro {width: 1440px; height: auto; margin: 0 auto; padding-top: 90px; box-sizing: border-box; }
 .intro > div {margin: 180px 0; display: flex; justify-content: space-between; align-items: center; }
 .intro span {width: 499px; height: 500px; display: inline-block; background: url("../images/intro_Me.png") no-repeat center center;}
-.intro_text h2 {font-size: 5rem; font-weight: 700; line-height: 90%; font-family: 'Druk'; color: #fff;}
+.intro_text h2 {font-size: 5rem; font-weight: 700; line-height: 90%; /* letter-spacing: 1px; */ font-family: 'Druk'; color: #fff;}
 .intro_text i {font-size: 13rem; font-weight: 700; line-height: 90%; font-family: 'Druk'; color: #fff; display: block;}
 .intro_text p {font-size: 2.4rem; font-weight: 400; line-height: 2.8rem; color: #fff; margin-top: 30px;}
 .pdfDownload {width: 260px; height: 54px; display: block; border-radius: 50px; padding: 15px 30px; box-sizing: border-box; background: #FFCC00; font-size: 2.4rem; font-weight: 400; line-height: 100%; color: #000; margin-top: 50px;}
@@ -160,3 +160,13 @@ body { background-color: var(--surface-default); transition: background-color 0.
 
 /* footer */
 footer { width: 1440px; height: auto; margin: 0 auto; padding-top: 210px; }
+.bottom_link {width: 100%; height: auto; border-top: 1px solid #888; border-bottom: 1px solid #888; padding: 54px 0; display: flex; justify-content: space-between; align-items: center;}
+address {display: flex; justify-content: space-between; padding: 50px 0; font-style: normal; font-size: 2rem; line-height: 2.4rem; font-weight: 400; color: #888; }
+.footer-right { display: flex;}
+
+.footer-left a, .footer-right p {font-size: 2rem; line-height: 150%; font-weight: 400; color: #888; margin-right: 50px;}
+.footer-left a:last-child {margin-right: 0;}
+.footer-right b {font-size: 2.4rem; line-height: 2.8rem; font-weight: 700; color: #fff;}
+.footer-right span {width: 24px; height: 24px; display: inline-block; margin-left: 20px; background: url('../images/airplane.png') no-repeat center center;}
+
+address p {font-size: 2rem; line-height: 150%; font-weight: 400; color: #888;}
