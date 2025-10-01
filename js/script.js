@@ -30,8 +30,6 @@
 }); */
 
 
-
-
 // HTML 문서가 완전히 로드된 후 스크립트가 실행되도록 합니다.
 document.addEventListener('DOMContentLoaded', () => {
     const toggleButton = document.querySelector('.dark-light-toggle');
@@ -61,4 +59,28 @@ document.addEventListener('DOMContentLoaded', () => {
         // 새로운 테마를 페이지에 적용합니다.
         applyTheme(newTheme);
     });
+
+
+
+    // works 나열방식 토글
+    const gridBtn = document.querySelector('.view-btn.grid');
+    const listBtn = document.querySelector('.view-btn.list');
+    const worksGrid = document.querySelector('.works-grid');
+
+    if (gridBtn && listBtn && worksGrid) {
+        gridBtn.addEventListener('click', () => {
+            gridBtn.classList.add('active');
+            listBtn.classList.remove('active');
+            worksGrid.classList.add('grid-view');
+            worksGrid.classList.remove('list-view');
+        });
+        listBtn.addEventListener('click', () => {
+            listBtn.classList.add('active');
+            gridBtn.classList.remove('active');
+            worksGrid.classList.add('list-view');
+            worksGrid.classList.remove('grid-view');
+        });
+        // 기본값: grid-view
+        worksGrid.classList.add('grid-view');
+    }
 });
