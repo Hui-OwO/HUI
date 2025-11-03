@@ -12,38 +12,6 @@ a { color: #888; text-decoration: none; }
 /* @charset="UTF-8" */
 /* css 리셋파일 안에 들어가는 내용임 */
 
-/* 배경색 000000 */
-/* 1440px */
-.wrap {background: #000; transition: background-color 0.3s;}
-/* 상단메뉴 */
-header {width: 100%; height: 90px; background: #00000040; backdrop-filter: blur(24px); position: fixed; top: 0; z-index: 9999999999; transition: background-color 0.3s;}
-.head {width: 1440px; height: 100%; display: flex; justify-content: space-between; align-items: center; margin: 0 auto;}
-/* nav {width: 458px; height: 52px; display: flex; align-items: center; border: 1px solid #fff; border-radius: 50px; padding: 9px 10px; box-sizing: border-box; background: #ffffff20; backdrop-filter: blur(24px);} */
-nav { width: 458px; height: 52px; display: flex; align-items: center; border-radius: 50px; padding: 9px 10px; box-sizing: border-box; backdrop-filter: blur(24px); background: #ffffff20; /* 단색 배경 */ position: relative; z-index: 1; overflow: hidden; }
-nav::before { content: ""; position: absolute; inset: 0; border-radius: 50px; padding: 1px; /* border 두께 */ background: linear-gradient(90deg, #fff, #ffffff40); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; z-index: 0; pointer-events: none; }
-
-.logo a { width: 94px; height: 50px; display: block; background-color: #FFCC00; mask-image: url("data:image/svg+xml,%3Csvg width='94' height='50' viewBox='0 0 94 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='18.75' height='31.25' fill='%23FFCC00'/%3E%3Crect x='37.5' width='18.75' height='31.25' fill='%23FFCC00'/%3E%3Crect x='18.75' y='31.25' width='18.75' height='18.75' fill='%23FFCC00'/%3E%3Crect x='56.25' y='31.25' width='18.75' height='18.75' fill='%23FFCC00'/%3E%3Crect x='75' width='18.75' height='31.25' fill='%23FFCC00'/%3E%3Crect y='12.5' width='56.25' height='6.25' fill='%23FFCC00'/%3E%3Crect x='18.75' y='43.75' width='56.25' height='6.25' fill='%23FFCC00'/%3E%3C/svg%3E%0A");}
-
-.head ul {display: flex; align-items: center;}
-.head li {display: inline-block;}
-.head > nav a {font-size: 2rem; font-weight: 400; line-height: 2.4rem; padding: 5px 15px; border-radius: 50px; color: #aaa;}
-.head > nav li {margin-right: 5px;}
-.head > nav li:nth-child(4) {margin-right: 15px;}
-.head > nav li:last-child {margin-right: 0;}
-.head > nav li:last-child a {color: #000; background: #FFCC00;}
-
-
-/* 다크/라이트 모드 토글 버튼 스타일 */
-.dark-light-toggle { background: none; border: none; cursor: pointer; padding: 0; width: 50px; height: 50px; position: relative; }
-.dark-light-toggle > div { position: absolute; top: 0; left: 0; width: 100%; height: 100%; transition: opacity 0.3s ease, transform 0.3s ease; }
-
-/* 다크모드일 때 (기본) */
-.dark-light-toggle .moon-icon { opacity: 0; transform: scale(0); background-color: #000; mask-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M43.6625 31.9271C44.0875 30.9146 42.8729 30.0521 41.8542 30.5021C39.8175 31.395 37.6175 31.8547 35.3937 31.8521C26.675 31.8521 19.6083 24.9271 19.6083 16.3833C19.6074 13.499 20.4268 10.6738 21.9708 8.2375C22.5625 7.30417 21.8521 6.0125 20.7687 6.2875C12.4167 8.41875 6.25 15.8604 6.25 24.7125C6.25 35.2271 14.9479 43.75 25.6792 43.75C33.8042 43.75 40.7625 38.8646 43.6625 31.9271Z' fill='black'/%3E%3Cpath d='M32.5228 6.46458C31.4186 5.72708 30.102 7.04375 30.8374 8.14791L32.1499 10.1167C32.6829 10.9147 32.9673 11.8528 32.9673 12.8125C32.9673 13.7722 32.6829 14.7103 32.1499 15.5083L30.8374 17.4771C30.102 18.5812 31.4207 19.8979 32.5249 19.1604L34.4916 17.8479C35.2896 17.315 36.2277 17.0305 37.1874 17.0305C38.1471 17.0305 39.0852 17.315 39.8832 17.8479L41.852 19.1604C42.9561 19.8979 44.2728 18.5812 43.5353 17.4771L42.2228 15.5083C41.6899 14.7103 41.4054 13.7722 41.4054 12.8125C41.4054 11.8528 41.6899 10.9147 42.2228 10.1167L43.5353 8.14791C44.2728 7.04375 42.9561 5.72708 41.8499 6.46458L39.8832 7.77708C39.0852 8.31004 38.1471 8.59449 37.1874 8.59449C36.2277 8.59449 35.2896 8.31004 34.4916 7.77708L32.5228 6.46458Z' fill='black'/%3E%3C/svg%3E%0A"); }
-.dark-light-toggle .sun-icon { opacity: 1; transform: scale(1); background-color: #fff; mask-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_376_18)'%3E%3Cmask id='mask0_376_18' style='mask-type:luminance' maskUnits='userSpaceOnUse' x='0' y='0' width='50' height='50'%3E%3Cpath d='M0 0H50V50H0V0Z' fill='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_376_18)'%3E%3Cpath d='M25 0C25.5525 0 26.0824 0.219493 26.4731 0.610194C26.8638 1.00089 27.0833 1.5308 27.0833 2.08333V6.25C27.0833 6.80253 26.8638 7.33244 26.4731 7.72314C26.0824 8.11384 25.5525 8.33333 25 8.33333C24.4475 8.33333 23.9176 8.11384 23.5269 7.72314C23.1362 7.33244 22.9167 6.80253 22.9167 6.25V2.08333C22.9167 1.5308 23.1362 1.00089 23.5269 0.610194C23.9176 0.219493 24.4475 0 25 0ZM0 25C0 24.4475 0.219493 23.9176 0.610194 23.5269C1.00089 23.1362 1.5308 22.9167 2.08333 22.9167H6.25C6.80253 22.9167 7.33244 23.1362 7.72314 23.5269C8.11384 23.9176 8.33333 24.4475 8.33333 25C8.33333 25.5525 8.11384 26.0824 7.72314 26.4731C7.33244 26.8638 6.80253 27.0833 6.25 27.0833H2.08333C1.5308 27.0833 1.00089 26.8638 0.610194 26.4731C0.219493 26.0824 0 25.5525 0 25ZM43.75 22.9167C43.1975 22.9167 42.6676 23.1362 42.2769 23.5269C41.8862 23.9176 41.6667 24.4475 41.6667 25C41.6667 25.5525 41.8862 26.0824 42.2769 26.4731C42.6676 26.8638 43.1975 27.0833 43.75 27.0833H47.9167C48.4692 27.0833 48.9991 26.8638 49.3898 26.4731C49.7805 26.0824 50 25.5525 50 25C50 24.4475 49.7805 23.9176 49.3898 23.5269C48.9991 23.1362 48.4692 22.9167 47.9167 22.9167H43.75ZM27.0833 43.75C27.0833 43.1975 26.8638 42.6676 26.4731 42.2769C26.0824 41.8862 25.5525 41.6667 25 41.6667C24.4475 41.6667 23.9176 41.8862 23.5269 42.2769C23.1362 42.6676 22.9167 43.1975 22.9167 43.75V47.9167C22.9167 48.4692 23.1362 48.9991 23.5269 49.3898C23.9176 49.7805 24.4475 50 25 50C25.5525 50 26.0824 49.7805 26.4731 49.3898C26.8638 48.9991 27.0833 48.4692 27.0833 47.9167V43.75ZM13.2146 36.7854C13.6051 37.1761 13.8246 37.7059 13.8246 38.2583C13.8246 38.8108 13.6051 39.3406 13.2146 39.7312L10.2708 42.6771C10.0787 42.8761 9.84877 43.0348 9.59459 43.144C9.34042 43.2531 9.06704 43.3106 8.79042 43.313C8.5138 43.3154 8.23946 43.2627 7.98343 43.158C7.72739 43.0532 7.49479 42.8985 7.29918 42.7029C7.10357 42.5073 6.94887 42.2747 6.84412 42.0187C6.73937 41.7626 6.68666 41.4883 6.68906 41.2117C6.69147 40.935 6.74894 40.6617 6.85812 40.4075C6.96731 40.1533 7.12602 39.9234 7.325 39.7312L10.2708 36.7854C10.6615 36.3948 11.1913 36.1754 11.7437 36.1754C12.2962 36.1754 12.8239 36.3948 13.2146 36.7854ZM42.6771 7.32292C43.0676 7.7136 43.2871 8.24341 43.2871 8.79583C43.2871 9.34826 43.0676 9.87807 42.6771 10.2687L39.7312 13.2146C39.5391 13.4136 39.3092 13.5723 39.055 13.6815C38.8008 13.7906 38.5275 13.8481 38.2508 13.8505C37.9742 13.8529 37.6999 13.8002 37.4438 13.6955C37.1878 13.5907 36.9552 13.436 36.7596 13.2404C36.564 13.0448 36.4093 12.8122 36.3045 12.5562C36.1998 12.3001 36.1471 12.0258 36.1495 11.7492C36.1519 11.4725 36.2094 11.1992 36.3185 10.945C36.4277 10.6908 36.5864 10.4609 36.7854 10.2687L39.7312 7.32292C40.1219 6.93235 40.6517 6.71294 41.2042 6.71294C41.7566 6.71294 42.2864 6.93235 42.6771 7.32292ZM7.32292 7.32292C7.7136 6.93235 8.24341 6.71294 8.79583 6.71294C9.34826 6.71294 9.87807 6.93235 10.2687 7.32292L13.2146 10.2687C13.4182 10.4597 13.5814 10.6896 13.6944 10.9449C13.8075 11.2001 13.868 11.4755 13.8726 11.7546C13.8771 12.0337 13.8255 12.3109 13.7208 12.5697C13.6161 12.8285 13.4605 13.0636 13.2632 13.2611C13.0658 13.4585 12.8309 13.6143 12.5721 13.7192C12.3134 13.824 12.0363 13.8759 11.7572 13.8715C11.478 13.8672 11.2026 13.8068 10.9473 13.6939C10.692 13.5811 10.4619 13.4181 10.2708 13.2146L7.32292 10.2708C6.93235 9.88015 6.71294 9.35034 6.71294 8.79792C6.71294 8.24549 6.93235 7.7136 7.32292 7.32292ZM36.7854 36.7854C37.1761 36.3948 37.7059 36.1754 38.2583 36.1754C38.8108 36.1754 39.3406 36.3948 39.7312 36.7854L42.6771 39.7312C42.8761 39.9234 43.0348 40.1533 43.144 40.4075C43.2531 40.6617 43.3106 40.935 43.313 41.2117C43.3154 41.4883 43.2627 41.7626 43.158 42.0187C43.0532 42.2747 42.8985 42.5073 42.7029 42.7029C42.5073 42.8985 42.2747 43.0532 42.0187 43.158C41.7626 43.2627 41.4883 43.3154 41.2117 43.313C40.935 43.3106 40.6617 43.2531 40.4075 43.144C40.1533 43.0348 39.9234 42.8761 39.7312 42.6771L36.7854 39.7312C36.3948 39.3406 36.1754 38.8108 36.1754 38.2583C36.1754 37.7059 36.3948 37.1761 36.7854 36.7854ZM10.4167 25C10.4167 23.0849 10.7939 21.1885 11.5268 19.4192C12.2596 17.6499 13.3338 16.0422 14.688 14.688C16.0422 13.3338 17.6499 12.2596 19.4192 11.5268C21.1885 10.7939 23.0849 10.4167 25 10.4167C26.9151 10.4167 28.8115 10.7939 30.5808 11.5268C32.3501 12.2596 33.9578 13.3338 35.312 14.688C36.6662 16.0422 37.7404 17.6499 38.4732 19.4192C39.2061 21.1885 39.5833 23.0849 39.5833 25C39.5833 28.8677 38.0469 32.5771 35.312 35.312C32.5771 38.0469 28.8677 39.5833 25 39.5833C21.1323 39.5833 17.4229 38.0469 14.688 35.312C11.9531 32.5771 10.4167 28.8677 10.4167 25Z' fill='white'/%3E%3C/g%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_376_18'%3E%3Crect width='50' height='50' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A"); }
-
-/* 라이트모드일 때 */
-body.light-mode .dark-light-toggle .moon-icon { opacity: 1; /* moon-icon 표시 */ transform: scale(1); }
-body.light-mode .dark-light-toggle .sun-icon { opacity: 0; /* sun-icon 숨김 */ transform: scale(0); }
 
 
 
@@ -131,68 +99,7 @@ body.light-mode .dark-light-toggle .sun-icon { opacity: 0; /* sun-icon 숨김 */
 .more-btn::before { content: ""; position: absolute; inset: 0; border-radius: 10px; padding: 1px; /* border 두께 */ background: linear-gradient(0deg, #ffffff20, #ffffff50); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; z-index: 0; pointer-events: none; }
 
 
-/* footer */
-footer { width: 1440px; height: auto; margin: 0 auto; padding-top: 210px; }
-.bottom_link {width: 100%; height: auto; border-top: 1px solid #888; border-bottom: 1px solid #888; padding: 54px 0; display: flex; justify-content: space-between; align-items: center;}
-address {display: flex; justify-content: space-between; padding: 50px 0; font-style: normal; font-size: 2rem; line-height: 2.4rem; font-weight: 400; color: #888; }
-.footer-right { display: flex;}
 
-.footer-left a, .footer-right p {font-size: 2rem; line-height: 150%; font-weight: 400; color: #888; margin-right: 50px;}
-.footer-left a:last-child {margin-right: 0;}
-.footer-right b {font-size: 2.4rem; line-height: 2.8rem; font-weight: 700; color: #fff;}
-.footer-right i {width: 24px; height: 24px; display: inline-block; font-size: 24px; margin-left: 20px; color: #fff;}
-/* .footer-right span {width: 24px; height: 24px; display: inline-block; margin-left: 20px; background: url('../images/airplane.png') no-repeat center center;} */
-
-address p {font-size: 2rem; line-height: 150%; font-weight: 400; color: #888;}
-
-
-/* ======================================================== */
-/* 라이트 모드 스타일 (Light Mode Styles) */
-/* ======================================================== */
-
-body.light-mode .wrap { background: #fff; /* 밝은 회색 배경 */
-}
-body.light-mode header { background: #ffffff80; }
-body.light-mode nav { background: #00000010; }
-body.light-mode nav::before { background: linear-gradient(90deg, #00000050, #00000010); }
-body.light-mode .head > nav a { color: #444; }
-
-/* 라이트 모드에서 로고 이미지 변경 */
-body.light-mode .logo a { background-color: #4300D1; }
-
-/* 라이트 모드에서 contact 버튼 색상 변경 */
-body.light-mode .head > nav li:last-child a { color: #fff; background: #4300D1; }
-/* 라이트 모드에서 Download Resume 버튼 색상 변경 */
-body.light-mode .pdfDownload { background: #4300D1; color: #fff; }
-
-/* 텍스트 색상 */
-body.light-mode .intro_text h2, body.light-mode .intro_text i, body.light-mode .Skills h3, body.light-mode .edu h3, body.light-mode .exp h3, body.light-mode .int_center h3, body.light-mode .learning h3, body.light-mode .work-info strong, body.light-mode .footer-right b, body.light-mode .works h2, body.light-mode .Skills p, body.light-mode .edu p, body.light-mode .exp p, body.light-mode .int_center p, body.light-mode .learning p, body.light-mode .work-info span { color: #000; }
-body.light-mode .intro_text p { color: #888; }
-body.light-mode a, body.light-mode .edu span, body.light-mode .exp span, body.light-mode .work-info p, body.light-mode address p, body.light-mode .footer-left a, body.light-mode .footer-right p { color: #888; }
-body.light-mode .vision h2, body.light-mode .vision p { color: #fff; }
-body.light-mode .learning h3, body.light-mode .learning-list span { color: #fff; }
-
-/* 박스 스타일 */
-body.light-mode .box { background: #00000005; color: #000; }
-body.light-mode .box::before { background: linear-gradient(0deg, #00000050, #00000020); }
-body.light-mode .vision, body.light-mode .learning { background-blend-mode: overlay; }
-body.light-mode .vision { background: url('../images/vision_bg_light.png') center/cover, #00000005; }
-body.light-mode .learning { background: url('../images/learning_bg_light.png') center/cover, #00000005; }
-
-
-/* 스킬 태그 */
-body.light-mode .skill { background: #fff; color: #000; }
-body.light-mode .skill::before { background: linear-gradient(0deg, #4300D120, #4300D150); }
-body.light-mode .learning-list span::before { background: linear-gradient(0deg, #fff, #4300D150); }
-body.light-mode .rhino{ background-color: #000;}
-body.light-mode .zbrush{ background-color: #000;}
-
-/* 푸터 구분선 */
-body.light-mode .bottom_link { border-color: #d9d9d9; }
-
-
-/* 라이트 모드에서 Work 사진 테두리 색상 변경 */
-body.light-mode .work-img::before {background: linear-gradient(0deg, #00000050, #00000020);}
 
 
 
