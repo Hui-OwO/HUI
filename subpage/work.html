@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hui's portfolio</title>
 
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/work.css">
     <link rel="stylesheet" href="../css/font.css">
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
+    <!-- font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <script src="https://kit.fontawesome.com/2e10de9f08.js" crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
 
 
 </head>
+
 <body class="works_page">
-    <script src="../js/script.js"></script>
 
     <div class="wrap">
         <header>
             <div class="head">
-                <h1 class="logo"><a href="../index.html"></a></h1>
+                <h1 class="logo"><a href="../index.html"><span class="blind">Hui's portfolio</span></a></h1>
                 <nav>
                     <ul>
-                        <li><a href="#">About</a></li>
+                        <li><a href="javascript:void(0);">About</a></li>
                         <li><a href="work.html">Work</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="javascript:void(0);">Blog</a></li>
                         <li><a href="#">more</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
@@ -45,45 +51,50 @@
             </div>
             <h2>Works</h2>
             <div class="works-grid">
-                <div class="work_left">
-                    <div class="work-card">
-                        <a href="keri.html">
-                            <div class="work-img" style="background-image: url('../images/KERI.jpg');"></div>
-                        </a>
-                        <div class="work-info">
-                            <strong>KERI<span>Website</span></strong>
-                            <p>Enhancing a professional and reliable brand image and crafting intuitive experiences.</p>
-                        </div>
-                    </div>
-                    <div class="work-card">
-                        <a href="Craft.html">
-                            <div class="work-img" style="background-image: url('../images/Craft.jpg');"></div>
-                        </a>
-                        <div class="work-info">
-                            <strong>Craft<span>Mobile</span></strong>
-                            <p>Explore the works of diverse craft artists through the intuitive experience of Craft.</p>
-                        </div>
+
+                <div class="work-card">
+                    <a href="keri.html">
+                        <div class="work-img" style="background-image: url('../images/KERI.jpg');"></div><span class="blind">KERI</span>
+                    </a>
+                    <div class="work-info">
+                        <strong>KERI<span>Website</span></strong>
+                        <p>Enhancing a professional and reliable brand image and crafting intuitive experiences.</p>
                     </div>
                 </div>
-                
-                <div class="work_right">
-                    <div class="work-card">
-                        <a href="https://hui-owo.github.io/seoul/">
-                            <div class="work-img" style="background-image: url('../images/Seoul.jpg');"></div>
-                        </a>
-                        <div class="work-info">
-                            <strong>Seoul<span>Website</span></strong>
-                            <p>Bringing Seoul's Events to Life with Vibrant Design.</p>
-                        </div>
+                <div class="work-card">
+                    <a href="https://hui-owo.github.io/seoul/">
+                        <div class="work-img" style="background-image: url('../images/Seoul.jpg');"></div><span class="blind">Seoul</span>
+                    </a>
+                    <div class="work-info">
+                        <strong>Seoul<span>Website</span></strong>
+                        <p>Bringing Seoul's Events to Life with Vibrant Design.</p>
                     </div>
-                    <div class="work-card">
-                        <a href="https://hui-owo.github.io/seoul/">
-                            <div class="work-img" style="background-image: url('../images/Seoul.jpg');"></div>
-                        </a>
-                        <div class="work-info">
-                            <strong>Seoul<span>Website</span></strong>
-                            <p>Bringing Seoul's Events to Life with Vibrant Design.</p>
-                        </div>
+                </div>
+                <div class="work-card">
+                    <a href="https://hui-owo.github.io/rotary/index.html">
+                        <div class="work-img" style="background-image: url('../images/Rotary.jpg');"></div><span class="blind">Rotary</span>
+                    </a>
+                    <div class="work-info">
+                        <strong>Rotary<span>Website</span></strong>
+                        <p>Create designs that build trust, convey the value of 'Service in Action,' and facilitate easier participation.</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <a href="Craft.html">
+                        <div class="work-img" style="background-image: url('../images/Craft.jpg');"></div><span class="blind">Craft</span>
+                    </a>
+                    <div class="work-info">
+                        <strong>Craft<span>Mobile</span></strong>
+                        <p>Explore the works of diverse craft artists through the intuitive experience of Craft.</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <a href="Craft.html">
+                        <div class="work-img" style="background-image: url('../images/Berlin_Phil.jpg');"></div><span class="blind">Berlin Phil</span>
+                    </a>
+                    <div class="work-info">
+                        <strong>Berlin Phil<span>Mobile</span></strong>
+                        <p>Explore the works of diverse craft artists through the intuitive experience of Craft.</p>
                     </div>
                 </div>
             </div>
@@ -103,7 +114,7 @@
                 </div>
                 <div class="footer-right">
                     <p>Daegu, KR</p>
-                    <b>Available on remote<span></span></b>
+                    <b>Available on remote<i class="fa-solid fa-plane-departure"></i></b>
                 </div>
             </div>
             <address>
@@ -113,4 +124,5 @@
         </footer>
     </div>
 </body>
+
 </html>

@@ -83,4 +83,56 @@ document.addEventListener('DOMContentLoaded', () => {
         // 기본값: grid-view
         worksGrid.classList.add('grid-view');
     }
+
+
+    // Contact modal: open/close, ESC 처리, 포커스 간단 처리
+    (() => {
+        const openBtns = document.querySelectorAll('.open-contact');
+        const modal = document.querySelector('.contact-modal');
+        const panel = modal && modal.querySelector('.contact-modal__panel');
+        const closeTriggers = modal && modal.querySelectorAll('[data-close], .contact-modal__close');
+        const firstFocusable = () => panel && panel.querySelector('input, textarea, button');
+        const body = document.body;
+
+        if (!modal) return;
+
+        const openModal = () => {
+            modal.classList.add('open');
+            modal.setAttribute('aria-hidden', 'false');
+            body.classList.add('modal-open');
+            // 포커스 이동(간단)
+            const f = firstFocusable();
+            if (f) f.focus();
+        };
+
+        const closeModal = () => {
+            modal.classList.remove('open');
+            modal.setAttribute('aria-hidden', 'true');
+            body.classList.remove('modal-open');
+            // 모달 연 버튼으로 포커스 복원(간단: 첫 버튼)
+            if (openBtns && openBtns[0]) openBtns[0].focus();
+        };
+
+        openBtns.forEach(btn => btn.addEventListener('click', openModal));
+        closeTriggers.forEach(el => el.addEventListener('click', closeModal));
+
+        // ESC 키로 닫기
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('open')) {
+                closeModal();
+            }
+        });
+
+        // 폼 제출 기본 동작 막고 예시 처리
+        const form = modal.querySelector('.contact-form');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                // 실제 처리 로직(ajax 전송 등)을 여기에 추가하세요.
+                alert('메시지가 전송되었습니다. (데모)');
+                closeModal();
+                form.reset();
+            });
+        }
+    })();
 });
