@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work | Hui's portfolio</title>
+    <title>Blog | Hui's portfolio</title>
 
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/work.css">
+    <link rel="stylesheet" href="../css/layout.css">
     <link rel="stylesheet" href="../css/font.css">
     <link rel="stylesheet" as="style" crossorigin
-        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css">
     <!-- font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <script src="https://kit.fontawesome.com/2e10de9f08.js" crossorigin="anonymous"></script>
     <script src="../js/script.js"></script>
 
 
+
 </head>
-
-<body class="works_page">
-
+<body>
     <div class="wrap">
+        <!-- navigation -->
         <header>
             <div class="head">
                 <h1 class="logo"><a href="../index.html"><span class="blind">Hui's portfolio</span></a></h1>
+                <!-- span: 웹접근성 때문에 추가 -->
                 <nav>
                     <ul>
                         <li><a href="about.html">About</a></li>
                         <li><a href="work.html">Work</a></li>
-                        <li><a href="javascript:void(0);">Blog</a></li>
+                        <li><a href="Blog.html">Blog</a></li>
                         <li><a class="nav_more">more</a></li>
                         <li><a class="open-contact">Contact</a></li>
                     </ul>
                 </nav>
                 <!-- 다크/라이트 모드 토글 버튼 -->
                 <div class="toggle-container">
-                    <button class="dark-light-toggle" title="Toggle dark/light mode">
+                    <button type="button" class="dark-light-toggle" title="Toggle dark/light mode">
                         <div class="sun-icon"></div>
                         <div class="moon-icon"></div>
                     </button>
@@ -44,61 +44,8 @@
             </div>
         </header>
 
-        <section class="works">
-            <div class="works-view-toggle">
-                <button class="view-btn grid active">Grid</button>
-                <button class="view-btn list">List</button>
-            </div>
-            <h2>Works</h2>
-            <div class="works-grid">
 
-                <div class="work-card">
-                    <a href="keri.html">
-                        <div class="work-img" style="background-image: url('../images/KERI.jpg');"></div><span class="blind">KERI</span>
-                    </a>
-                    <div class="work-info">
-                        <strong>KERI<span>Website</span></strong>
-                        <p>Enhancing a professional and reliable brand image and crafting intuitive experiences.</p>
-                    </div>
-                </div>
-                <div class="work-card">
-                    <a href="https://hui-owo.github.io/seoul/">
-                        <div class="work-img" style="background-image: url('../images/Seoul.jpg');"></div><span class="blind">Seoul</span>
-                    </a>
-                    <div class="work-info">
-                        <strong>Seoul<span>Website</span></strong>
-                        <p>Bringing Seoul's Events to Life with Vibrant Design.</p>
-                    </div>
-                </div>
-                <div class="work-card">
-                    <a href="https://hui-owo.github.io/rotary/index.html">
-                        <div class="work-img" style="background-image: url('../images/Rotary.jpg');"></div><span class="blind">Rotary</span>
-                    </a>
-                    <div class="work-info">
-                        <strong>Rotary<span>Website</span></strong>
-                        <p>Create designs that build trust, convey the value of 'Service in Action,' and facilitate easier participation.</p>
-                    </div>
-                </div>
-                <div class="work-card">
-                    <a href="Craft.html">
-                        <div class="work-img" style="background-image: url('../images/Craft.jpg');"></div><span class="blind">Craft</span>
-                    </a>
-                    <div class="work-info">
-                        <strong>Craft<span>Mobile</span></strong>
-                        <p>Explore the works of diverse craft artists through the intuitive experience of Craft.</p>
-                    </div>
-                </div>
-                <div class="work-card">
-                    <a href="Craft.html">
-                        <div class="work-img" style="background-image: url('../images/Berlin_Phil.jpg');"></div><span class="blind">Berlin Phil</span>
-                    </a>
-                    <div class="work-info">
-                        <strong>Berlin Phil<span>Mobile</span></strong>
-                        <p>Explore the works of diverse craft artists through the intuitive experience of Craft.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
 
 
@@ -152,5 +99,4 @@
         </div>
     </div>
 </body>
-
 </html>

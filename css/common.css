@@ -148,25 +148,24 @@ body.light-mode .works-view-toggle .view-btn.active { background: #4300D1; /* �
 
 /* 이미지(내부 요소)에 그림자 트랜지션 적용 */
 /* 기본(다크 모드) : 흰색 글로우 */
-.main_P .works-grid .work-card > a .work-img { transition: box-shadow 0.18s ease; box-shadow: 0 18px 40px #ffffff20; }
-
+.main_P .works-grid .work-card > a .work-img { transition: box-shadow 0.18s ease; box-shadow: 0 18px 40px #ffffff20; display: block; position: relative; z-index: 1; }
 /* 호버 시 카드 컨테이너가 아닌 a 요소만 위로 이동 */
 .main_P .works-grid .work-card:hover > a { transform: translateY(-6px); }
 
 /* 그림자 효과는 .work-img에만 적용 (다크 모드에서는 흰색) */
 .main_P .works-grid .work-card:hover > a .work-img { box-shadow: 0 18px 40px #ffffff35; }
 
-/* 라이트 모드에서 그림자 색상(검정)으로 덮어쓰기 */
-body.light-mode .main_P .works-grid .work-card > a .work-img { box-shadow: 0 18px 40px #00000010; }
-body.light-mode .main_P .works-grid .work-card:hover > a .work-img { box-shadow: 0 18px 40px #00000030; }
+/* 라이트 모드에서 그림자 색상(검정)으로 덮어쓰기 - 더 명확한 rgba 값으로 강화 */
+body.light-mode .works-grid .work-card > a .work-img { box-shadow: 0 18px 40px rgba(0,0,0,0.16); }
+body.light-mode .works-grid .work-card:hover > a .work-img { box-shadow: 0 22px 56px rgba(0,0,0,0.26); }
 
 /* 모바일에서 효과 축소 */
 @media (max-width:600px) {
     .main_P .works-grid .work-card:hover > a { transform: translateY(-3px); }
     /* 다크 모드(기본) 모바일 그림자 */
     .main_P .works-grid .work-card:hover > a .work-img { box-shadow: 0 10px 24px #ffffff10; }
-    /* 라이트 모드 모바일 오버라이드 */
-    .main_P body.light-mode .works-grid .work-card:hover > a .work-img { box-shadow: 0 10px 24px #00000030; }
+    /* 라이트 모드 모바일 오버라이드 (선택자 오타 수정) */
+    body.light-mode .main_P .works-grid .work-card:hover > a .work-img { box-shadow: 0 10px 24px rgba(0,0,0,0.22); }
 }
 
 
@@ -205,7 +204,7 @@ body.light-mode .contact-modal__panel { background: #fff; color: #000; }
 body.light-mode .contact-form input, body.light-mode .contact-form textarea { background: #fff; color: #000; border-color: #e6e6e6; }
 body.light-mode .btn-primary { background: #4300D1; color: #fff; }
 body.light-mode .btn-secondary { color: #000; border-color: #ccc; }
-
+body.light-mode .contact-modal__close { color: #000; }
 
 
 
