@@ -30,8 +30,8 @@
                         <li><a href="javascript:void(0);">About</a></li>
                         <li><a href="work.html">Work</a></li>
                         <li><a href="javascript:void(0);">Blog</a></li>
-                        <li><a href="#">more</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a class="nav_more">more</a></li>
+                        <li><a class="open-contact">Contact</a></li>
                     </ul>
                 </nav>
                 <!-- 다크/라이트 모드 토글 버튼 -->
@@ -122,6 +122,34 @@
                 <p>HUI</p>
             </address>
         </footer>
+    </div>
+
+    <!-- Contact modal -->
+    <div class="contact-modal" aria-hidden="true">
+        <div class="contact-modal__backdrop" data-close></div>
+        <div class="contact-modal__panel" role="dialog" aria-modal="true" aria-label="Contact form">
+            <button type="button" class="contact-modal__close" aria-label="Close">&times;</button>
+            <h3>Contact</h3>
+            <p>문의사항은 아래 양식을 통해 전달해주세요.</p>
+            <form class="contact-form" action="#" method="post" novalidate>
+                <label>
+                    <span class="blind">Name</span>
+                    <input type="text" name="name" placeholder="Your name" required>
+                </label>
+                <label>
+                    <span class="blind">Email</span>
+                    <input type="email" name="email" placeholder="your@email.com" required>
+                </label>
+                <label>
+                    <span class="blind">Message</span>
+                    <textarea name="message" rows="5" placeholder="Message" required></textarea>
+                </label>
+                <div class="contact-form__actions">
+                    <button type="submit" class="btn-primary">submit</button> <!-- 또는 send -->
+                    <button type="button" class="btn-secondary" data-close>Cancel</button>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 

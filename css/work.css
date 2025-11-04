@@ -11,13 +11,29 @@
 .works-grid.list-view .work-img { width: 320px; height: 220px; border-radius: 24px; margin-right: 32px; }
 .works-grid.list-view .work-info { padding-top: 0; width: auto; }
 
-/* 그리드 카드 스타일 추가 (사진 레이아웃과 유사하게) */
+/* 그리드 카드 스타일 추가 */
 .works-grid.grid-view { display: flex; flex-wrap: wrap; gap: 40px; }
 /* 카드 기본 스타일 */
-.works-grid.grid-view .work-card { width: calc((100% - 40px * 3) / 4); /* 기본 4열 */
-    background: #fff; border-radius: 16px; padding: 18px; box-shadow: 0 8px 30px rgba(15, 15, 15, 0.06); display: block; box-sizing: border-box; transition: transform 0.18s ease, box-shadow 0.18s ease; }
+.works-grid.grid-view .work-card { width: calc((100% - 40px * 3) / 4); /* 기본 4열 */ background: #fff; border-radius: 16px; padding: 18px; box-shadow: 0 8px 30px #00000010; display: block; box-sizing: border-box; transition: transform 0.18s ease, box-shadow 0.18s ease; }
+
 /* 호버 효과 */
-.works-grid.grid-view .work-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(15,15,15,0.08); }
+.works-grid.grid-view .work-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px #00000030; }
+
+/* 라이트 모드에서 그림자 색상(하양)으로 덮어쓰기 */
+body.light-mode .works-grid.grid-view .work-card { box-shadow: 0 18px 40px #ffffff20; }
+body.light-mode .works-grid.grid-view .work-card:hover { box-shadow: 0 18px 40px #00000035; }
+
+/* 모바일에서 효과 축소 */
+@media (max-width:600px) {
+    .works-grid .work-card:hover > a { transform: translateY(-3px); }
+    /* 다크 모드(기본) 모바일 그림자 */
+    .works-grid .work-card:hover > a .work-img { box-shadow: 0 10px 24px #ffffff10; }
+    /* 라이트 모드 모바일 오버라이드 */
+    body.light-mode .works-grid .work-card:hover > a .work-img { box-shadow: 0 10px 24px #00000030; }
+}
+
+
+
 /* 이미지 스타일 */
 .works-grid.grid-view .work-img { width: 100%; height: 140px; border-radius: 12px; background-size: cover; background-position: center; margin-bottom: 12px; box-shadow: none; }
 /* 카드 내용 정렬 및 텍스트 스타일 */
@@ -27,6 +43,7 @@
 .works-grid.grid-view .work-info p { margin: 0; color: #666; font-size: 1.3rem; line-height: 1.45; margin-top: 8px; }
 /* 리스트 뷰 유지 규칙(우선순위 보장) */
 .works-grid.list-view .work-card { width: 100%; }
+
 /* 반응형: 3열 (큰 태블릿 / 작은 데스크탑) */
 @media (max-width:1200px) {
     .works-grid.grid-view .work-card { width: calc((100% - 40px * 2) / 3); }
