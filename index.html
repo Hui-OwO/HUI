@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/cursor.css">
+    <!-- <link rel="stylesheet" href="css/animation.css"> -->
     <link rel="stylesheet" as="style" crossorigin
         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css">
     <!-- font Awesome -->
@@ -17,7 +18,7 @@
     <script src="https://kit.fontawesome.com/2e10de9f08.js" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
     <script src="js/cursor.js"></script>
-
+    <script data-cfasync="false" type="text/javascript" src="form-submission-handler.js"></script>
 
 
 </head>
@@ -36,7 +37,8 @@
                         <li><a href="subpage/work.html">Work</a></li>
                         <li><a href="subpage/Blog.html">Blog</a></li>
                         <li class="nav-item-more">
-                            <a href="javascript:void(0);" class="nav_more">more <i class="fa-solid fa-chevron-down"></i></a>
+                            <a href="javascript:void(0);" class="nav_more">more <i
+                                    class="fa-solid fa-chevron-down"></i></a>
                             <div class="dropdown-content">
                                 <div class="dropdown-section">
                                     <a href="javascript:void(0);" class="dropdown-card large">
@@ -99,7 +101,8 @@
                     <div class="intro_text">
                         <h2>Hi, I'm<br><i>GYEONGHUI JEONG</i></h2>
                         <p>I am looking for opportunities in web and 3D design.</p>
-                        <a class="pdfDownload" href="파일 경로/파일이름.확장자" download="hui_Resume" role="button">Download Resume</a>
+                        <a class="pdfDownload" href="파일 경로/파일이름.확장자" download="hui_Resume" role="button">Download
+                            Resume</a>
                     </div>
                     <span></span>
                 </div>
@@ -211,7 +214,8 @@
                             </a>
                             <div class="work-info">
                                 <strong>Rotary<span>Website</span></strong>
-                                <p>Create designs that build trust, convey the value of 'Service in Action,' and facilitate easier participation.
+                                <p>Create designs that build trust, convey the value of 'Service in Action,' and
+                                    facilitate easier participation.
                                 </p>
                             </div>
                         </div>
@@ -264,6 +268,12 @@
     <div class="contact-modal" aria-hidden="true">
         <div class="contact-modal__backdrop" data-close></div>
         <div class="contact-modal__panel" role="dialog" aria-modal="true" aria-label="Contact form">
+            <!-- 탭 버튼 추가 -->
+            <div class="contact-modal__tabs">
+                <button type="button" class="tab-btn active" data-tab="quick-connect">Quick connect</button>
+                <button type="button" class="tab-btn" data-tab="message">E-mail Form</button>
+            </div>
+
             <div class="contact-modal__content">
                 <!-- Quick Connect Tab -->
                 <div id="quick-connect" class="contact-tab-content active">
@@ -294,7 +304,40 @@
                         <span></span> Currently available for new opportunities
                     </div>
                 </div>
+
+                <!-- Message Tab (새로운 탭 콘텐츠) -->
+                <div id="message" class="contact-tab-content" aria-hidden="true" style="display:none;">
+                    <section class="email-me">
+                        <h2 class="title-section">Email Me!</h2>
+                        <form class="gform"
+                            action="https://script.google.com/macros/s/AKfycbzk_0S9mJYSAfP_ErAzGOfBWfSevWJdJR7yvju6y6aFXK-wlFq3K9rH1WbxJ-hYAUHOzA/exec"
+                            method="POST" data-email="jrudgml0316@gmail.com">
+                            <fieldset>
+                                <div class="box-input">
+                                    <label for="userName">Name plz:)</label>
+                                    <input type="text" id="userName" name="name" placeholder="Name" required>
+                                </div>
+                                <div class="box-input">
+                                    <label for="userEmail">Email Address</label>
+                                    <input type="email" id="userEmail" name="email" placeholder="Email" required>
+                                </div>
+                                <div class="box-input">
+                                    <label for="userMessage">Message</label>
+                                    <textarea name="message" id="userMessage" required></textarea>
+                                </div>
+                                <div class="box-input">
+                                    <button type="submit" class="btn-send">Send Message</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </section>
+                </div>
             </div>
+        </div>
+        <div style="display:none" class="thankyou_message">
+            <!-- You can customize the thankyou message by editing the code below -->
+            <p>연락주셔서 감사합니다. 빠른 시일 내에 답변 드리겠습니다🚀</p>
+            </h2>
         </div>
     </div>
 </body>

@@ -21,13 +21,13 @@ a { color: #888; text-decoration: none; }
 /* 1440px */
 .wrap {background: #000; transition: background-color 0.3s;}
 /* 상단메뉴 */
-header {width: 100%; height: 90px; background: #00000040; backdrop-filter: blur(24px); position: fixed; top: 0; z-index: 999; transition: background-color 0.3s;}
+header {width: 100%; height: 90px; background: #00000040; backdrop-filter: blur(24px); position: fixed; top: 0; z-index: 999; transition: background-color 0.3s; -webkit-backdrop-filter: blur(24px);}
 .head {width: 1440px; height: 100%; display: flex; justify-content: space-between; align-items: center; margin: 0 auto;}
 /* nav {width: 458px; height: 52px; display: flex; align-items: center; border: 1px solid #fff; border-radius: 50px; padding: 9px 10px; box-sizing: border-box; background: #ffffff20; backdrop-filter: blur(24px);} */
-nav { width: auto; height: auto; display: flex; align-items: center; border-radius: 50px; padding: 9px 10px; box-sizing: border-box; backdrop-filter: blur(24px); background: #ffffff20; /* 단색 배경 */ position: relative; z-index: 1; }
+nav { width: auto; height: auto; display: flex; align-items: center; border-radius: 50px; padding: 9px 10px; box-sizing: border-box; backdrop-filter: blur(24px); background: #ffffff20; /* 단색 배경 */ position: relative; z-index: 1; -webkit-backdrop-filter: blur(24px); }
 nav::before { content: ""; position: absolute; inset: 0; border-radius: 50px; padding: 1px; /* border 두께 */ background: linear-gradient(90deg, #fff, #ffffff40); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; z-index: 0; pointer-events: none; }
 
-.logo a { width: 94px; height: 50px; display: block; background-color: #FFCC00; mask-image: url("data:image/svg+xml,%3Csvg width='94' height='50' viewBox='0 0 94 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='18.75' height='31.25' fill='%23FFCC00'/%3E%3Crect x='37.5' width='18.75' height='31.25' fill='%23FFCC00'/%3E%3Crect x='18.75' y='31.25' width='18.75' height='18.75' fill='%23FFCC00'/%3E%3Crect x='56.25' y='31.25' width='18.75' height='18.75' fill='%23FFCC00'/%3E%3Crect x='75' width='18.75' height='31.25' fill='%23FFCC00'/%3E%3Crect y='12.5' width='56.25' height='6.25' fill='%23FFCC00'/%3E%3Crect x='18.75' y='43.75' width='56.25' height='6.25' fill='%23FFCC00'/%3E%3C/svg%3E%0A");}
+.logo a { width: 94px; height: 50px; display: block; background-color: #FFCC00; mask-image: url("data:image/svg+xml,%3Csvg width='94' height='50' viewBox='0 0 94 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='18.75' height='31.25' fill='%23FFCC00'/%3E%3Crect x='37.5' width='18.75' height='31.25' fill='%23FFCC00'/%3E%3Crect x='18.75' y='31.25' width='18.75' height='18.75' fill='%23FFCC00'/%3E%3Crect x='56.25' y='31.25' width='18.75' height='18.75' fill='%23FFCC00'/%3E%3Crect x='75' width='18.75' height='31.25' fill='%23FFCC00'/%3E%3Crect y='12.5' width='56.25' height='6.25' fill='%23FFCC00'/%3E%3Crect x='18.75' y='43.75' width='56.25' height='6.25' fill='%23FFCC00'/%3E%3C/svg%3E%0A"); -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='94' height='50' viewBox='0 0 94 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='18.75' height='31.25' fill='%23FFCC00'/%3E%3Crect x='37.5' width='18.75' height='31.25' fill='%23FFCC00'/%3E%3Crect x='18.75' y='31.25' width='18.75' height='18.75' fill='%23FFCC00'/%3E%3Crect x='56.25' y='31.25' width='18.75' height='18.75' fill='%23FFCC00'/%3E%3Crect x='75' width='18.75' height='31.25' fill='%23FFCC00'/%3E%3Crect y='12.5' width='56.25' height='6.25' fill='%23FFCC00'/%3E%3Crect x='18.75' y='43.75' width='56.25' height='6.25' fill='%23FFCC00'/%3E%3C/svg%3E%0A");}
 
 .blind { border: 0; clip: rect(0 0 0 0); clip-path: inset(50%); width: 1px; height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; white-space: nowrap; }
 
@@ -52,14 +52,20 @@ nav::before { content: ""; position: absolute; inset: 0; border-radius: 50px; pa
 .dropdown-content { display: none; position: absolute; top: 130%; left: 10%; transform: translateX(-54%); width: 620px; background: #1c1c1e; border: 1px solid #333; box-shadow: 0 16px 32px rgba(0,0,0,0.4); z-index: 1; border-radius: 20px; padding: 15px; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, top 0.2s ease; display: flex; gap: 8px; }
 .dropdown-section { display: flex; flex-direction: column; gap: 8px; }
 .dropdown-section:first-child { flex-grow: 1; }
-.dropdown-card { display: flex; align-items: center; gap: 16px; padding: 12px; border-radius: 12px; text-decoration: none; transition: background-color 0.2s; background-color: #2c2c2e; }
-.dropdown-card.large { flex-grow: 1; padding: 0; align-items: stretch; position: relative; overflow: hidden; }
-.dropdown-card.large img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
-.dropdown-card.large:hover img { transform: scale(1.05); }
-.card-text-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); }
-.card-text-overlay h4 { color: #fff; font-size: 1.8rem; font-weight: 600; margin: 0 0 4px; }
-.card-text-overlay p { color: #ccc; font-size: 1.4rem; margin: 0; }
+.dropdown-card { display: flex; align-items: center; gap: 16px; padding: 12px; border-radius: 2px; text-decoration: none; transition: background-color 0.2s, border-color 0.2s; background-color: #2c2c2e; border: 1px solid rgba(255,255,255,0.06); /* 수정: 기본 테두리 색/두께 */ }
 
+/* dropdown-card — 두께 10px 적용(가시성/클리핑 보정) */
+.nav-item-more .dropdown-card { display: flex; align-items: center; gap: 16px; padding: 12px; border-radius: 14px; /* border 두께에 맞춰 radius 조정 */ text-decoration: none; transition: background-color 0.2s, border-color 0.2s, transform 0.2s; background-color: #2c2c2e; box-sizing: border-box; /* border를 element 크기 안에 포함 */ background-clip: padding-box; /* border 내부로 배경 잘림 방지 */ border: 10px solid rgba(255,255,255,0.06); /* 변경: 10px 두께 */ }
+
+/* 큰 카드(이미지)용은 약간 더 얇게 유지하거나 동일하게 적용 */
+.nav-item-more .dropdown-card.large { flex-grow: 1; padding: 0; align-items: stretch; position: relative; overflow: hidden; border-radius: 16px; box-sizing: border-box; background-clip: padding-box; border: 10px solid rgba(255,255,255,0.04); }
+
+/* hover 시 테두리 강조 */
+.nav-item-more .dropdown-card:hover { background-color: #3a3a3c; border-color: rgba(255,255,255,0.12); }
+
+/* 라이트모드 오버라이드 (필요시 색상/투명도 조정) */
+body.light-mode .nav-item-more .dropdown-card { border-color: rgba(0,0,0,0.06); }
+body.light-mode .nav-item-more .dropdown-card.large { border-color: rgba(0,0,0,0.04); }
 .dropdown-card:hover { background-color: #3a3a3c; }
 .card-icon { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background-color: #3a3a3c; border-radius: 8px; font-size: 1.8rem; color: #ddd; }
 .card-text h4 { color: #111; }
@@ -173,37 +179,6 @@ body.light-mode .works-view-toggle .view-btn.active { background: #4300D1; /* �
 
 
 
-/* index.html 전용: .work-card에 hover 시 a 요소가 아니라 a:hover 내의 이미지(.work-img)만 이동하도록 변경 */
-.main_P .works-grid .work-card { will-change: transform, box-shadow; }
-
-/* anchor에 이동 트랜지션 적용 */
-.main_P .works-grid .work-card > a { display: block; transition: transform 0.18s ease; }
-
-/* 이미지(내부 요소)에 그림자 트랜지션 적용 */
-/* 기본(다크 모드) : 흰색 글로우 */
-.main_P .works-grid .work-card > a .work-img { transition: box-shadow 0.18s ease; box-shadow: 0 18px 40px #ffffff20; display: block; position: relative; z-index: 1; }
-/* 호버 시 카드 컨테이너가 아닌 a 요소만 위로 이동 */
-.main_P .works-grid .work-card:hover > a { transform: translateY(-6px); }
-
-/* 그림자 효과는 .work-img에만 적용 (다크 모드에서는 흰색) */
-.main_P .works-grid .work-card:hover > a .work-img { box-shadow: 0 18px 40px #ffffff35; }
-
-/* 라이트 모드에서 그림자 색상(검정)으로 덮어쓰기 - 더 명확한 rgba 값으로 강화 */
-body.light-mode .works-grid .work-card > a .work-img { box-shadow: 0 18px 40px rgba(0,0,0,0.16); }
-body.light-mode .works-grid .work-card:hover > a .work-img { box-shadow: 0 22px 56px rgba(0,0,0,0.26); }
-
-/* 모바일에서 효과 축소 */
-@media (max-width:600px) {
-    .main_P .works-grid .work-card:hover > a { transform: translateY(-3px); }
-    /* 다크 모드(기본) 모바일 그림자 */
-    .main_P .works-grid .work-card:hover > a .work-img { box-shadow: 0 10px 24px #ffffff10; }
-    /* 라이트 모드 모바일 오버라이드 (선택자 오타 수정) */
-    body.light-mode .main_P .works-grid .work-card:hover > a .work-img { box-shadow: 0 10px 24px rgba(0,0,0,0.22); }
-}
-
-
-
-
 
 
 /* Contact modal - bottom slide up */
@@ -212,6 +187,14 @@ body.light-mode .works-grid .work-card:hover > a .work-img { box-shadow: 0 22px 
 .contact-modal__panel { position: relative; width: 100%; max-width: 550px; margin: 0 20px 20px; background: #0b0b0b; color: #fff; border-radius: 12px; transform: translateY(110%); transition: transform 300ms cubic-bezier(.2,.8,.2,1); box-shadow: 0 24px 48px rgba(0,0,0,0.6); padding: 28px; pointer-events: auto; }
 .contact-modal__panel h3 { font-size: 2.4rem; margin-bottom: 8px; }
 .contact-modal__panel p { color: #bdbdbd; margin-bottom: 20px; font-size: 1.6rem; }
+
+
+/* 탭 스타일 */
+.contact-modal__tabs { display: flex; gap: 12px; background: linear-gradient(180deg,#0f0f10,#151515); padding: 8px; border-radius: 15px; margin-bottom: 20px; align-items: center; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02); }
+.tab-btn { flex: 1; appearance: none; background: transparent; border: 1px solid rgba(255,255,255,0.04); padding: 12px 18px; border-radius: 15px; color: #bdbdbd; font-weight: 700; font-size: 1.6rem; cursor: pointer; transition: all 160ms ease; box-shadow: none; }
+.tab-btn:hover { color: #fff; }
+.tab-btn.active { color: #fff; background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); box-shadow: 0 6px 18px rgba(0,0,0,0.6), inset 0 0 0 3px rgba(255,255,255,0.02); border-color: rgba(255,255,255,0.06); }
+
 
 /* Quick connect 전용으로, 탭 콘텐츠는 기본 노출 */
 .contact-tab-content { display: block; }
@@ -232,6 +215,46 @@ body.light-mode .works-grid .work-card:hover > a .work-img { box-shadow: 0 22px 
 
 .availability-status { display: flex; align-items: center; justify-content: center; background: #1c2e25; color: #30d158; border-radius: 12px; padding: 12px; font-size: 1.5rem; }
 .availability-status span { width: 8px; height: 8px; background: #30d158; border-radius: 50%; margin-right: 10px; }
+
+
+fieldset { border: none; margin: 0; padding: 0; }
+
+fieldset > .box-input:last-child { margin-top: 20px; }
+
+
+
+.box-input label { display: block; color: #d0d0d0; font-size: 1.2rem; margin-bottom: 6px; }
+.box-input input[type="text"], .box-input input[type="email"], .box-input textarea { width: 100%; background: linear-gradient(180deg,#0f0f10,#0b0b0b); border: 1px solid rgba(255,255,255,0.06); color: #e6e6e6; padding: 14px 16px; box-sizing: border-box; border-radius: 10px; font-size: 1.6rem; outline: none; transition: border-color 120ms ease, box-shadow 120ms ease; box-shadow: inset 0 -1px 0 rgba(255,255,255,0.01); }
+.box-input input::placeholder, .box-input textarea::placeholder { color: #9b9b9b; }
+
+/* textarea 높이 및 리사이즈 제한 */
+.box-input textarea { min-height: 140px; resize: vertical; line-height: 1.6; }
+
+/* 포커스 스타일 */
+.box-input input:focus, .box-input textarea:focus { border-color: rgba(115,92,255,0.9); box-shadow: 0 6px 24px rgba(75,55,200,0.12); }
+
+/* 버튼 스타일 - 그라디언트 전체 너비 */
+.btn-send { display: inline-block; width: 100%; padding: 14px 18px; border-radius: 12px; border: none; color: #000; font-size: 1.6rem; font-weight: 700; cursor: pointer; background: #FFCC00; transition: transform 120ms ease, box-shadow 120ms ease; }
+.btn-send:hover { transform: translateY(-2px); }
+
+/* 기타 정렬/여백 조정 */
+.contact-modal__content { padding-top: 4px; }
+/* .contact-tab-content { padding: 6px 0 0; } */
+/* .modal-socials { margin-bottom: 18px; }
+ */
+/* 라이트모드 오버라이드(간단 조정) */
+body.light-mode .tab-btn { color: #666; border-color: rgba(0,0,0,0.06); }
+body.light-mode .tab-btn.active { background: #fff; color: #000; box-shadow: 0 6px 18px rgba(67,0,209,0.06); }
+
+/* 접근성 관련: 탭 버튼 포커스 시 윤곽선 명확히 */
+.tab-btn:focus { outline: 3px solid rgba(115,92,255,0.14); outline-offset: 2px; }
+
+/* 기존 규칙들과 충돌이 생길 경우 우선 적용되도록 specificity 보강 */
+.contact-modal__panel .contact-modal__tabs,
+.contact-modal__panel .tab-btn,
+.contact-modal__panel .email-me .gform input,
+.contact-modal__panel .email-me .gform textarea { -webkit-font-smoothing: antialiased; }
+
 
 
 /* open state */
