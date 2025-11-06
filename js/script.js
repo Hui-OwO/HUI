@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-        // 탭 전환 로직 (재추가)
+        // 탭 전환 로직
         const tabButtons = contactModal.querySelectorAll('.contact-modal__tabs .tab-btn');
         const tabContents = contactModal.querySelectorAll('.contact-tab-content');
 
@@ -87,7 +87,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             });
 
-            // 초기 탭 설정 (Quick connect)
             const activeBtn = contactModal.querySelector('.contact-modal__tabs .tab-btn.active');
             if (activeBtn) {
                 showTab(activeBtn.dataset.tab);
@@ -96,12 +95,11 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        // 메시지 폼 제출 핸들러 (단순 처리 — 실제 전송 로직은 필요에 따라 업데이트)
+        // contact modal 내부(선택적) 폼 서브밋 핸들러 (class가 'contact-form'인 경우)
         const contactForm = contactModal.querySelector('.contact-form');
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                // TODO: 실제 전송(서버, 이메일 API 등) 로직으로 교체
                 alert('메시지가 전송되었습니다. 감사합니다.');
                 contactModal.classList.remove('open');
                 document.body.classList.remove('modal-open');
@@ -110,33 +108,30 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // --- 드롭다운 메뉴 로직 추가 ---
+    // 드롭다운 메뉴 로직
     const navItemMore = document.querySelector('.nav-item-more');
     if (navItemMore) {
         let closeTimer;
         const delay = 150; // 150ms 지연
 
         navItemMore.addEventListener('mouseenter', () => {
-            clearTimeout(closeTimer); // 닫기 타이머 취소
+            clearTimeout(closeTimer);
             navItemMore.classList.add('is-open');
         });
 
         navItemMore.addEventListener('mouseleave', () => {
-            // 마우스가 떠나면 닫기 타이머 설정
             closeTimer = setTimeout(() => {
                 navItemMore.classList.remove('is-open');
             }, delay);
         });
     }
-    // --- 여기까지 추가 ---
 
-    // --- Work 페이지 뷰 토글 기능 추가 ---
+    // Work 페이지 뷰 토글 기능
     const gridViewBtn = document.querySelector('.view-btn.grid');
     const listViewBtn = document.querySelector('.view-btn.list');
     const worksGrid = document.querySelector('.works-grid');
 
     if (gridViewBtn && listViewBtn && worksGrid) {
-        // 초기 상태 설정
         worksGrid.classList.add('grid-view');
 
         gridViewBtn.addEventListener('click', () => {
@@ -157,6 +152,48 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
-    // --- 여기까지 추가 ---
+
+    // 메시지 폼 제출 핸들러 (gform -> Google Apps Script)
+    const gforms = document.querySelectorAll('.gform');
+    if (gforms.length) {
+        gforms.forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const url = form.action;
+                const method = (form.method || 'POST').toUpperCase();
+                const formData = new FormData(form);
+
+                fetch(url, {
+                    method,
+                    body: formData,
+                    mode: 'no-cors'
+                }).then(() => {
+                    const contactModalEl = document.querySelector('.contact-modal');
+                    const thankEl = contactModalEl ? contactModalEl.querySelector('.thankyou_message') : document.querySelector('.thankyou_message');
+
+                    // contact 모달 닫기
+                    if (contactModalEl) contactModalEl.classList.remove('open');
+                    // thankyou 모달 표시
+                    if (thankEl) {
+                        thankEl.style.display = 'flex';
+                        thankEl.setAttribute('aria-hidden', 'false');
+                    }
+
+                    form.reset();
+
+                    // 3초 후 thankyou 닫기
+                    setTimeout(() => {
+                        if (thankEl) {
+                            thankEl.style.display = 'none';
+                            thankEl.setAttribute('aria-hidden', 'true');
+                        }
+                    }, 3000);
+                }).catch((err) => {
+                    console.error('Form submit error:', err);
+                    alert('전송 중 오류가 발생했습니다. 다시 시도해 주세요.');
+                });
+            });
+        });
+    }
 
 });

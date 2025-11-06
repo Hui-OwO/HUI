@@ -227,21 +227,30 @@ fieldset > .box-input:last-child { margin-top: 20px; }
 .box-input input[type="text"], .box-input input[type="email"], .box-input textarea { width: 100%; background: linear-gradient(180deg,#0f0f10,#0b0b0b); border: 1px solid rgba(255,255,255,0.06); color: #e6e6e6; padding: 14px 16px; box-sizing: border-box; border-radius: 10px; font-size: 1.6rem; outline: none; transition: border-color 120ms ease, box-shadow 120ms ease; box-shadow: inset 0 -1px 0 rgba(255,255,255,0.01); }
 .box-input input::placeholder, .box-input textarea::placeholder { color: #9b9b9b; }
 
+
+/* 라이트 모드 input */
+body.light-mode .box-input input[type="text"], body.light-mode .box-input input[type="email"], body.light-mode .box-input textarea { background: #fff; border: 1px solid rgba(0,0,0,0.1); color: #000; }
+body.light-mode .box-input input::placeholder, body.light-mode .box-input textarea::placeholder { color: #8c8c8c; }
+
+
 /* textarea 높이 및 리사이즈 제한 */
 .box-input textarea { min-height: 140px; resize: vertical; line-height: 1.6; }
 
 /* 포커스 스타일 */
 .box-input input:focus, .box-input textarea:focus { border-color: rgba(115,92,255,0.9); box-shadow: 0 6px 24px rgba(75,55,200,0.12); }
 
-/* 버튼 스타일 - 그라디언트 전체 너비 */
+/* 버튼 스타일 */
 .btn-send { display: inline-block; width: 100%; padding: 14px 18px; border-radius: 12px; border: none; color: #000; font-size: 1.6rem; font-weight: 700; cursor: pointer; background: #FFCC00; transition: transform 120ms ease, box-shadow 120ms ease; }
 .btn-send:hover { transform: translateY(-2px); }
+
+/* 라이트 모드 버튼 */
+body.light-mode .btn-send { background: #4300D1; color: #fff; }
 
 /* 기타 정렬/여백 조정 */
 .contact-modal__content { padding-top: 4px; }
 /* .contact-tab-content { padding: 6px 0 0; } */
-/* .modal-socials { margin-bottom: 18px; }
- */
+/* .modal-socials { margin-bottom: 18px; } */
+
 /* 라이트모드 오버라이드(간단 조정) */
 body.light-mode .tab-btn { color: #666; border-color: rgba(0,0,0,0.06); }
 body.light-mode .tab-btn.active { background: #fff; color: #000; box-shadow: 0 6px 18px rgba(67,0,209,0.06); }
@@ -256,11 +265,18 @@ body.light-mode .tab-btn.active { background: #fff; color: #000; box-shadow: 0 6
 .contact-modal__panel .email-me .gform textarea { -webkit-font-smoothing: antialiased; }
 
 
-
 /* open state */
 .contact-modal.open { pointer-events: auto; }
 .contact-modal.open .contact-modal__backdrop { opacity: 1; }
 .contact-modal.open .contact-modal__panel { transform: translateY(0%); }
+
+/* thankyou_message -> 모달 스타일 */
+.thankyou_message { display: none; /* 기본 숨김 */ position: fixed; inset: 0; z-index: 100001; align-items: center; justify-content: center; pointer-events: auto; background: rgba(0,0,0,0.45); /* 뒤 배경 어둡게 */ }
+.thankyou_message p { background: #0b0b0b; color: #fff; padding: 24px 32px; border-radius: 12px; box-shadow: 0 24px 48px rgba(0,0,0,0.6); font-size: 1.6rem; max-width: 90%; text-align: center; }
+
+/* 라이트모드 보정 */
+body.light-mode .thankyou_message p { background: #fff; color: #000; box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+
 
 /* close button & light mode */
 /* .contact-modal__close { position: absolute; top: 10px; right: 12px; background: transparent; border: none; color: #fff; font-size: 3.2rem; cursor: pointer; z-index: 10; }
