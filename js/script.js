@@ -31,108 +31,86 @@
 
 
 // HTML 문서가 완전히 로드된 후 스크립트가 실행되도록 합니다.
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
+
+    // 다크/라이트 모드 토글
     const toggleButton = document.querySelector('.dark-light-toggle');
-    const body = document.body;
-
-    // 저장된 테마나 선택된 테마를 적용하는 함수
-    const applyTheme = (theme) => {
-        if (theme === 'light') {
-            body.classList.add('light-mode');
-        } else {
-            body.classList.remove('light-mode');
-        }
-    };
-
-    // 사용자가 저장한 테마가 있는지 확인하고, 없으면 'dark' 모드를 기본으로 설정합니다.
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    applyTheme(savedTheme);
-
-    // 토글 버튼에 클릭 이벤트 리스너를 추가합니다.
-    toggleButton.addEventListener('click', () => {
-        // 'light-mode' 클래스의 존재 여부로 새로운 테마를 결정합니다.
-        const newTheme = body.classList.contains('light-mode') ? 'dark' : 'light';
-        
-        // 새로운 테마 설정을 localStorage에 저장합니다.
-        localStorage.setItem('theme', newTheme);
-        
-        // 새로운 테마를 페이지에 적용합니다.
-        applyTheme(newTheme);
-    });
-
-
-
-    // works 나열방식 토글
-    const gridBtn = document.querySelector('.view-btn.grid');
-    const listBtn = document.querySelector('.view-btn.list');
-    const worksGrid = document.querySelector('.works-grid');
-
-    if (gridBtn && listBtn && worksGrid) {
-        gridBtn.addEventListener('click', () => {
-            gridBtn.classList.add('active');
-            listBtn.classList.remove('active');
-            worksGrid.classList.add('grid-view');
-            worksGrid.classList.remove('list-view');
+    if (toggleButton) {
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
         });
-        listBtn.addEventListener('click', () => {
-            listBtn.classList.add('active');
-            gridBtn.classList.remove('active');
-            worksGrid.classList.add('list-view');
-            worksGrid.classList.remove('grid-view');
-        });
-        // 기본값: grid-view
-        worksGrid.classList.add('grid-view');
     }
 
+    // Contact 모달
+    const openContactButtons = document.querySelectorAll('.open-contact');
+    const closeContactButtons = document.querySelectorAll('[data-close]');
+    const contactModal = document.querySelector('.contact-modal');
 
-    // Contact modal: open/close, ESC 처리, 포커스 간단 처리
-    (() => {
-        const openBtns = document.querySelectorAll('.open-contact');
-        const modal = document.querySelector('.contact-modal');
-        const panel = modal && modal.querySelector('.contact-modal__panel');
-        const closeTriggers = modal && modal.querySelectorAll('[data-close], .contact-modal__close');
-        const firstFocusable = () => panel && panel.querySelector('input, textarea, button');
-        const body = document.body;
+    if (contactModal) {
+        openContactButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                contactModal.classList.add('open');
+                document.body.classList.add('modal-open');
+            });
+        });
 
-        if (!modal) return;
+        closeContactButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                contactModal.classList.remove('open');
+                document.body.classList.remove('modal-open');
+            });
+        });
 
-        const openModal = () => {
-            modal.classList.add('open');
-            modal.setAttribute('aria-hidden', 'false');
-            body.classList.add('modal-open');
-            // 포커스 이동(간단)
-            const f = firstFocusable();
-            if (f) f.focus();
-        };
+        // 탭 기능 제거됨. Quick connect 만 사용하므로 탭 초기화/전환 로직 삭제.
+    }
 
-        const closeModal = () => {
-            modal.classList.remove('open');
-            modal.setAttribute('aria-hidden', 'true');
-            body.classList.remove('modal-open');
-            // 모달 연 버튼으로 포커스 복원(간단: 첫 버튼)
-            if (openBtns && openBtns[0]) openBtns[0].focus();
-        };
+    // --- 드롭다운 메뉴 로직 추가 ---
+    const navItemMore = document.querySelector('.nav-item-more');
+    if (navItemMore) {
+        let closeTimer;
+        const delay = 150; // 150ms 지연
 
-        openBtns.forEach(btn => btn.addEventListener('click', openModal));
-        closeTriggers.forEach(el => el.addEventListener('click', closeModal));
+        navItemMore.addEventListener('mouseenter', () => {
+            clearTimeout(closeTimer); // 닫기 타이머 취소
+            navItemMore.classList.add('is-open');
+        });
 
-        // ESC 키로 닫기
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('open')) {
-                closeModal();
+        navItemMore.addEventListener('mouseleave', () => {
+            // 마우스가 떠나면 닫기 타이머 설정
+            closeTimer = setTimeout(() => {
+                navItemMore.classList.remove('is-open');
+            }, delay);
+        });
+    }
+    // --- 여기까지 추가 ---
+
+    // --- Work 페이지 뷰 토글 기능 추가 ---
+    const gridViewBtn = document.querySelector('.view-btn.grid');
+    const listViewBtn = document.querySelector('.view-btn.list');
+    const worksGrid = document.querySelector('.works-grid');
+
+    if (gridViewBtn && listViewBtn && worksGrid) {
+        // 초기 상태 설정
+        worksGrid.classList.add('grid-view');
+
+        gridViewBtn.addEventListener('click', () => {
+            if (!gridViewBtn.classList.contains('active')) {
+                worksGrid.classList.add('grid-view');
+                worksGrid.classList.remove('list-view');
+                gridViewBtn.classList.add('active');
+                listViewBtn.classList.remove('active');
             }
         });
 
-        // 폼 제출 기본 동작 막고 예시 처리
-        const form = modal.querySelector('.contact-form');
-        if (form) {
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                // 실제 처리 로직(ajax 전송 등)을 여기에 추가하세요.
-                alert('메시지가 전송되었습니다. (데모)');
-                closeModal();
-                form.reset();
-            });
-        }
-    })();
+        listViewBtn.addEventListener('click', () => {
+            if (!listViewBtn.classList.contains('active')) {
+                worksGrid.classList.remove('grid-view');
+                worksGrid.classList.add('list-view');
+                listViewBtn.classList.add('active');
+                gridViewBtn.classList.remove('active');
+            }
+        });
+    }
+    // --- 여기까지 추가 ---
 });

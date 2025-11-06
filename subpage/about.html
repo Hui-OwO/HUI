@@ -30,8 +30,51 @@
                         <li><a href="about.html">About</a></li>
                         <li><a href="work.html">Work</a></li>
                         <li><a href="Blog.html">Blog</a></li>
-                        <li><a class="nav_more">more</a></li>
-                        <li><a class="open-contact">Contact</a></li>
+                        <li class="nav-item-more">
+                            <a href="javascript:void(0);" class="nav_more">more <i class="fa-solid fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <div class="dropdown-section">
+                                    <a href="javascript:void(0);" class="dropdown-card large">
+                                        <img src="images/guestbook.jpg" alt="Guestbook">
+                                        <div class="card-text-overlay">
+                                            <h4>Guestbook</h4>
+                                            <p>Let me know you were here</p>
+                                        </div>
+                                    </a>
+                                    <a href="javascript:void(0);" class="dropdown-card large">
+                                        <img src="images/bucketlist.jpg" alt="Bucket List">
+                                        <div class="card-text-overlay">
+                                            <h4>Bucket List</h4>
+                                            <p>Things to do at least once</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="dropdown-section">
+                                    <a href="javascript:void(0);" class="dropdown-card">
+                                        <div class="card-icon"><i class="fa-solid fa-link"></i></div>
+                                        <div class="card-text">
+                                            <h4>Links</h4>
+                                            <p>All my links are here</p>
+                                        </div>
+                                    </a>
+                                    <a href="javascript:void(0);" class="dropdown-card">
+                                        <div class="card-icon"><i class="fa-regular fa-bookmark"></i></div>
+                                        <div class="card-text">
+                                            <h4>Uses</h4>
+                                            <p>A peek into my digital...</p>
+                                        </div>
+                                    </a>
+                                    <a href="javascript:void(0);" class="dropdown-card">
+                                        <div class="card-icon"><i class="fa-regular fa-credit-card"></i></div>
+                                        <div class="card-text">
+                                            <h4>Attribution</h4>
+                                            <p>Journey to create this site</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="javascript:void(0);" class="open-contact">Contact</a></li>
                     </ul>
                 </nav>
                 <!-- 다크/라이트 모드 토글 버튼 -->
@@ -75,27 +118,37 @@
     <div class="contact-modal" aria-hidden="true">
         <div class="contact-modal__backdrop" data-close></div>
         <div class="contact-modal__panel" role="dialog" aria-modal="true" aria-label="Contact form">
-            <button type="button" class="contact-modal__close" aria-label="Close">&times;</button>
-            <h3>Contact</h3>
-            <p>문의사항은 아래 양식을 통해 전달해주세요.</p>
-            <form class="contact-form" action="#" method="post" novalidate>
-                <label>
-                    <span class="blind">Name</span>
-                    <input type="text" name="name" placeholder="Your name" required>
-                </label>
-                <label>
-                    <span class="blind">Email</span>
-                    <input type="email" name="email" placeholder="your@email.com" required>
-                </label>
-                <label>
-                    <span class="blind">Message</span>
-                    <textarea name="message" rows="5" placeholder="Message" required></textarea>
-                </label>
-                <div class="contact-form__actions">
-                    <button type="submit" class="btn-primary">Send</button> <!-- 또는 send -->
-                    <button type="button" class="btn-secondary" data-close>Cancel</button>
+            <div class="contact-modal__content">
+                <!-- Quick Connect Tab -->
+                <div id="quick-connect" class="contact-tab-content active">
+                    <div class="modal-socials">
+                        <a href="javascript:void(0);" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Hui-OwO" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+                        <a href="javascript:void(0);" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                    </div>
+                    <div class="connect-grid">
+                        <a href="mailto:jrudgml0316@gmail.com" class="connect-card">
+                            <div class="card-header">
+                                <i class="fa-regular fa-envelope"></i>
+                                <h4>Email</h4>
+                            </div>
+                            <p class="card-main">jrudgml0316@gmail.com</p>
+                            <p class="card-sub">Send me an email directly</p>
+                        </a>
+                        <a href="javascript:void(0);" class="connect-card">
+                            <div class="card-header">
+                                <i class="fa-regular fa-calendar-days"></i>
+                                <h4>Book a Call</h4>
+                            </div>
+                            <p class="card-main">Schedule a time slot</p>
+                            <p class="card-sub">Book a call on my calendar</p>
+                        </a>
+                    </div>
+                    <div class="availability-status">
+                        <span></span> Currently available for new opportunities
+                    </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </body>
