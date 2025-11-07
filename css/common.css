@@ -49,41 +49,42 @@ nav::before { content: ""; position: absolute; inset: 0; border-radius: 50px; pa
 .nav-item-more { position: relative; }
 .nav-item-more .fa-chevron-down { font-size: 1.2rem; text-align: center; margin-left: 4px; transition: transform 0.2s ease; }
 
-.dropdown-content { display: none; position: absolute; top: 130%; left: 10%; transform: translateX(-54%); width: 620px; background: #1c1c1e; border: 1px solid #333; box-shadow: 0 16px 32px rgba(0,0,0,0.4); z-index: 1; border-radius: 20px; padding: 15px; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, top 0.2s ease; display: flex; gap: 8px; }
-.dropdown-section { display: flex; flex-direction: column; gap: 8px; }
+
+.dropdown-content { display: none; position: absolute; top: 130%; left: 10%; transform: translateX(-54%); width: 620px; background: #1a1a1a; border: 1px solid #333; box-shadow: 0 16px 32px rgba(0,0,0,0.4); z-index: 1; border-radius: 20px; padding: 15px; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, top 0.2s ease; display: flex; gap: 10px; }
+.dropdown-section { display: flex; flex-direction: column; gap: 10px; }
 .dropdown-section:first-child { flex-grow: 1; }
-.dropdown-card { display: flex; align-items: center; gap: 16px; padding: 12px; border-radius: 2px; text-decoration: none; transition: background-color 0.2s, border-color 0.2s; background-color: #2c2c2e; border: 1px solid rgba(255,255,255,0.06); /* 수정: 기본 테두리 색/두께 */ }
 
 /* dropdown-card — 두께 10px 적용(가시성/클리핑 보정) */
-.nav-item-more .dropdown-card { display: flex; align-items: center; gap: 16px; padding: 12px; border-radius: 14px; /* border 두께에 맞춰 radius 조정 */ text-decoration: none; transition: background-color 0.2s, border-color 0.2s, transform 0.2s; background-color: #2c2c2e; box-sizing: border-box; /* border를 element 크기 안에 포함 */ background-clip: padding-box; /* border 내부로 배경 잘림 방지 */ border: 10px solid rgba(255,255,255,0.06); /* 변경: 10px 두께 */ }
+.nav-item-more .dropdown-card { display: flex; align-items: center; gap: 16px; padding: 12px; border-radius: 14px; /* border 두께에 맞춰 radius 조정 */ text-decoration: none; transition: background-color 0.2s, border-color 0.2s, transform 0.2s; background: #2a2a2a; box-sizing: border-box; /* border를 element 크기 안에 포함 */ background-clip: padding-box; /* border 내부로 배경 잘림 방지 */ border: 1px solid #ffffff40; }
 
 /* 큰 카드(이미지)용은 약간 더 얇게 유지하거나 동일하게 적용 */
-.nav-item-more .dropdown-card.large { flex-grow: 1; padding: 0; align-items: stretch; position: relative; overflow: hidden; border-radius: 16px; box-sizing: border-box; background-clip: padding-box; border: 10px solid rgba(255,255,255,0.04); }
+.nav-item-more .dropdown-card.large { flex-grow: 1; /* padding: 0; */ align-items: stretch; position: relative; overflow: hidden; border-radius: 16px; box-sizing: border-box; background-clip: padding-box; border: 1px solid #ffffff40; }
 
 /* hover 시 테두리 강조 */
 .nav-item-more .dropdown-card:hover { background-color: #3a3a3c; border-color: rgba(255,255,255,0.12); }
 
+.card-text-overlay h4, .card-text h4 { font-size: 1.8rem; font-weight: 400; color: #fff;}
+.card-text-overlay p, .card-text p { font-size: 1.6rem; color: #888; margin: 0; }
+
+.card-icon i { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background-color: #3a3a3c; border-radius: 8px; font-size: 2rem; color: #ddd; }
+
+
 /* 라이트모드 오버라이드 (필요시 색상/투명도 조정) */
-body.light-mode .nav-item-more .dropdown-card { border-color: rgba(0,0,0,0.06); }
-body.light-mode .nav-item-more .dropdown-card.large { border-color: rgba(0,0,0,0.04); }
-.dropdown-card:hover { background-color: #3a3a3c; }
-.card-icon { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background-color: #3a3a3c; border-radius: 8px; font-size: 1.8rem; color: #ddd; }
-.card-text h4 { color: #111; }
-.card-text p { font-size: 1.4rem; color: #888; margin: 0; }
-/* .nav-item-more:hover .dropdown-content { display: flex; opacity: 1; visibility: visible; top: calc(100% + 10px); } */
-/* .nav-item-more:hover .fa-chevron-down { transform: rotate(180deg); } */
+body.light-mode .nav-item-more .dropdown-card { border-color: #00000040; }
+body.light-mode .nav-item-more .dropdown-card.large { border-color: #00000040; }
+body.light-mode .dropdown-card { background-color: #fff; }
+
+body.light-mode .dropdown-content { background-color: #f2f2f7; border-color: #e0e0e0; box-shadow: 0 16px 32px rgba(0,0,0,0.1); }
+body.light-mode .dropdown-card:hover { background-color: #e5e5e5; }
+body.light-mode .card-icon { background-color: #fff; color: #555; }
+body.light-mode .card-text h4 { color: #111; }
+body.light-mode .card-text p { color: #666; }
+
 
 /* JS로 제어하기 위한 클래스 추가 */
 .nav-item-more.is-open .dropdown-content { display: flex; opacity: 1; visibility: visible; top: calc(100% + 20px); } /* 높이조절 */
 .nav-item-more.is-open .fa-chevron-down { transform: rotate(180deg); }
 
-
-/* 라이트 모드 드롭다운 */
-body.light-mode .dropdown-content { background-color: #f0f0f0; border-color: #e0e0e0; box-shadow: 0 16px 32px rgba(0,0,0,0.1); }
-body.light-mode .dropdown-card:hover { background-color: #e5e5e5; }
-body.light-mode .card-icon { background-color: #fff; color: #555; }
-body.light-mode .card-text h4 { color: #111; }
-body.light-mode .card-text p { color: #666; }
 
 
 /* 다크/라이트 모드 토글 버튼 스타일 */
@@ -190,10 +191,10 @@ body.light-mode .works-view-toggle .view-btn.active { background: #4300D1; /* �
 
 
 /* 탭 스타일 */
-.contact-modal__tabs { display: flex; gap: 12px; background: linear-gradient(180deg,#0f0f10,#151515); padding: 8px; border-radius: 15px; margin-bottom: 20px; align-items: center; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02); }
+.contact-modal__tabs { display: flex; gap: 12px; background: #191919; padding: 5px; border-radius: 15px; margin-bottom: 30px; align-items: center; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02); }
 .tab-btn { flex: 1; appearance: none; background: transparent; border: 1px solid rgba(255,255,255,0.04); padding: 12px 18px; border-radius: 15px; color: #bdbdbd; font-weight: 700; font-size: 1.6rem; cursor: pointer; transition: all 160ms ease; box-shadow: none; }
 .tab-btn:hover { color: #fff; }
-.tab-btn.active { color: #fff; background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); box-shadow: 0 6px 18px rgba(0,0,0,0.6), inset 0 0 0 3px rgba(255,255,255,0.02); border-color: rgba(255,255,255,0.06); }
+.tab-btn.active { color: #fff; background: #1c1c1c; box-shadow: 0 6px 18px #FFCC0010, inset 0 0 0 3px #ffffff05; border-color: #ffffff0f; }
 
 
 /* Quick connect 전용으로, 탭 콘텐츠는 기본 노출 */
@@ -205,7 +206,7 @@ body.light-mode .works-view-toggle .view-btn.active { background: #4300D1; /* �
 .modal-socials a i { font-size: 2rem; }
 
 .connect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
-.connect-card { display: block; background: #1c1c1e; border-radius: 12px; padding: 20px; text-decoration: none; color: #fff; transition: background 0.2s; border: 1px solid #2a2a2c; }
+.connect-card { display: block; background: #1c1c1c; border-radius: 12px; padding: 20px; text-decoration: none; color: #fff; transition: background 0.2s; border: 1px solid #2a2a2c; }
 .connect-card:hover { background: #2c2c2e; }
 .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
 .card-header i { font-size: 1.8rem; color: #a9a9b0; }
@@ -217,15 +218,27 @@ body.light-mode .works-view-toggle .view-btn.active { background: #4300D1; /* �
 .availability-status span { width: 8px; height: 8px; background: #30d158; border-radius: 50%; margin-right: 10px; }
 
 
+
+
 fieldset { border: none; margin: 0; padding: 0; }
 
 fieldset > .box-input:last-child { margin-top: 20px; }
 
+/* Email form: name + email 한 줄 정렬 */
+.email-row { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 14px; }
+.email-row .box-input { flex: 1 1 0; min-width: 0; /* overflow 방지 */ }
 
+/* 모바일에서 세로 스택으로 전환 */
+@media (max-width:700px) {
+    .email-row { flex-direction: column; gap: 12px; }
+}
 
-.box-input label { display: block; color: #d0d0d0; font-size: 1.2rem; margin-bottom: 6px; }
-.box-input input[type="text"], .box-input input[type="email"], .box-input textarea { width: 100%; background: linear-gradient(180deg,#0f0f10,#0b0b0b); border: 1px solid rgba(255,255,255,0.06); color: #e6e6e6; padding: 14px 16px; box-sizing: border-box; border-radius: 10px; font-size: 1.6rem; outline: none; transition: border-color 120ms ease, box-shadow 120ms ease; box-shadow: inset 0 -1px 0 rgba(255,255,255,0.01); }
+/* 기존 .box-input 스타일과 충돌 없도록 유지 */
+.box-input label { display: block; color: #d0d0d0; font-size: 1.6rem; margin-bottom: 6px; }
+.box-input input[type="text"], .box-input input[type="email"], .box-input textarea { width: 100%; background: #0b0b0b; border: 1px solid #ffffff20; color: #e6e6e6; padding: 14px 16px; box-sizing: border-box; border-radius: 10px; font-size: 1.6rem; outline: none; transition: border-color 120ms ease, box-shadow 120ms ease; box-shadow: inset 0 -1px 0 rgba(255,255,255,0.01); }
 .box-input input::placeholder, .box-input textarea::placeholder { color: #9b9b9b; }
+
+
 
 
 /* 라이트 모드 input */
@@ -237,7 +250,8 @@ body.light-mode .box-input input::placeholder, body.light-mode .box-input textar
 .box-input textarea { min-height: 140px; resize: vertical; line-height: 1.6; }
 
 /* 포커스 스타일 */
-.box-input input:focus, .box-input textarea:focus { border-color: rgba(115,92,255,0.9); box-shadow: 0 6px 24px rgba(75,55,200,0.12); }
+.box-input input:focus, .box-input textarea:focus { border-color: #FFCC00; box-shadow: 0 6px 24px #FFCC0030; }
+body.light-mode .box-input input:focus, body.light-mode .box-input textarea:focus { border-color: #4300D1; box-shadow: 0 6px 24px #4300d11f; }
 
 /* 버튼 스타일 */
 .btn-send { display: inline-block; width: 100%; padding: 14px 18px; border-radius: 12px; border: none; color: #000; font-size: 1.6rem; font-weight: 700; cursor: pointer; background: #FFCC00; transition: transform 120ms ease, box-shadow 120ms ease; }
@@ -253,10 +267,10 @@ body.light-mode .btn-send { background: #4300D1; color: #fff; }
 
 /* 라이트모드 오버라이드(간단 조정) */
 body.light-mode .tab-btn { color: #666; border-color: rgba(0,0,0,0.06); }
-body.light-mode .tab-btn.active { background: #fff; color: #000; box-shadow: 0 6px 18px rgba(67,0,209,0.06); }
+body.light-mode .tab-btn.active { background: #fff; color: #000; box-shadow: 0 6px 18px #4300d10f; }
 
 /* 접근성 관련: 탭 버튼 포커스 시 윤곽선 명확히 */
-.tab-btn:focus { outline: 3px solid rgba(115,92,255,0.14); outline-offset: 2px; }
+/* .tab-btn:focus { outline: 3px solid rgba(115,92,255,0.14); outline-offset: 2px; } */
 
 /* 기존 규칙들과 충돌이 생길 경우 우선 적용되도록 specificity 보강 */
 .contact-modal__panel .contact-modal__tabs,

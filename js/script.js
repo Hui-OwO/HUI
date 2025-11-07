@@ -79,6 +79,22 @@ document.addEventListener('DOMContentLoaded', function () {
                     c.style.display = isTarget ? 'block' : 'none';
                     c.setAttribute('aria-hidden', isTarget ? 'false' : 'true');
                 });
+
+                // message 탭이 선택되면 Name 입력에 포커스
+                if (targetId === 'message') {
+                    const nameInput = contactModal.querySelector('#userName');
+                    if (nameInput) {
+                        // 약간의 지연을 줘서 렌더/애니메이션 후 포커스되게 함
+                        setTimeout(() => {
+                            try {
+                                nameInput.focus();
+                                if (typeof nameInput.select === 'function') nameInput.select();
+                            } catch (e) {
+                                // 아무 처리 필요 없음
+                            }
+                        }, 60);
+                    }
+                }
             };
 
             tabButtons.forEach(btn => {
@@ -196,4 +212,36 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // 추가: flip-card 클릭/토글 처리 (터치/모바일에서 hover 대체)
+    (function () {
+        const flipCards = document.querySelectorAll('.work-card.flip-card');
+        if (!flipCards.length) return;
+
+        flipCards.forEach(card => {
+            // 각 내부의 링크/버튼 클릭 시 카드 토글이 발생하지 않도록 전파 차단
+            card.querySelectorAll('a, button').forEach(el => {
+                el.addEventListener('click', (e) => {
+                    // 링크는 정상 동작하되 카드 토글 전파는 막음
+                    e.stopPropagation();
+                });
+            });
+
+            // 터치/클릭에서는 .flipped 토글
+            card.addEventListener('click', (e) => {
+                // 데스크탑에서 호버가 가능한 경우 클릭으로 토글하지 않음
+                if (window.matchMedia && window.matchMedia('(hover: hover)').matches) return;
+                card.classList.toggle('flipped');
+            });
+
+            // 키보드 접근성: Enter/Space 눌렀을 때 토글
+            card.setAttribute('tabindex', '0');
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    card.classList.toggle('flipped');
+                }
+            });
+        });
+
+    })();
 });
