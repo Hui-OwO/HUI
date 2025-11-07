@@ -28,10 +28,11 @@
                 <nav>
                     <ul>
                         <li><a href="javascript:void(0);">About</a></li>
-                        <li><a href="work.html">Work</a></li>
+                        <li><a href="subpage/work.html">Work</a></li>
                         <li><a href="javascript:void(0);">Blog</a></li>
                         <li class="nav-item-more">
-                            <a href="javascript:void(0);" class="nav_more">more <i class="fa-solid fa-chevron-down"></i></a>
+                            <a href="javascript:void(0);" class="nav_more">more <i
+                                    class="fa-solid fa-chevron-down"></i></a>
                             <div class="dropdown-content">
                                 <div class="dropdown-section">
                                     <a href="javascript:void(0);" class="dropdown-card large">
@@ -188,20 +189,22 @@
     <div class="contact-modal" aria-hidden="true">
         <div class="contact-modal__backdrop" data-close></div>
         <div class="contact-modal__panel" role="dialog" aria-modal="true" aria-label="Contact form">
+
             <!-- 탭 버튼 추가 -->
             <div class="contact-modal__tabs">
                 <button type="button" class="tab-btn active" data-tab="quick-connect">Quick connect</button>
                 <button type="button" class="tab-btn" data-tab="message">E-mail Form</button>
             </div>
 
+            <div class="modal-socials">
+                <a href="javascript:void(0);" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"><span class="blind">LinkedIn</span></i></a>
+                <a href="https://github.com/Hui-OwO" aria-label="Github"><i class="fa-brands fa-github"><span class="blind">Github</span></i></a>
+                <a href="javascript:void(0);" aria-label="Behance"><i class="fa-brands fa-behance"><span class="blind">Behance</span></i></a>
+            </div>
+
             <div class="contact-modal__content">
                 <!-- Quick Connect Tab -->
                 <div id="quick-connect" class="contact-tab-content active">
-                    <div class="modal-socials">
-                        <a href="javascript:void(0);" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="https://github.com/Hui-OwO" aria-label="Github"><i class="fa-brands fa-github"></i></a>
-                        <a href="javascript:void(0);" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
-                    </div>
                     <div class="connect-grid">
                         <a href="mailto:jrudgml0316@gmail.com" class="connect-card">
                             <div class="card-header">
@@ -227,20 +230,24 @@
 
                 <!-- Message Tab (새로운 탭 콘텐츠) -->
                 <div id="message" class="contact-tab-content" aria-hidden="true" style="display:none;">
-                    <section class="email-me">
-                        <h2 class="title-section">Email Me!</h2>
+                    <div class="email-me">
                         <form class="gform"
                             action="https://script.google.com/macros/s/AKfycbzk_0S9mJYSAfP_ErAzGOfBWfSevWJdJR7yvju6y6aFXK-wlFq3K9rH1WbxJ-hYAUHOzA/exec"
                             method="POST" data-email="jrudgml0316@gmail.com">
                             <fieldset>
-                                <div class="box-input">
-                                    <label for="userName">Name</label>
-                                    <input type="text" id="userName" name="name" placeholder="Your name" required autofocus>
+                                <div class="email-row">
+                                    <div class="box-input">
+                                        <label for="userName">Name</label>
+                                        <input type="text" id="userName" name="name" placeholder="Your name" required
+                                            autofocus>
+                                    </div>
+                                    <div class="box-input">
+                                        <label for="userEmail">Email Address</label>
+                                        <input type="email" id="userEmail" name="email" placeholder="Email@domain.com"
+                                            required>
+                                    </div>
                                 </div>
-                                <div class="box-input">
-                                    <label for="userEmail">Email Address</label>
-                                    <input type="email" id="userEmail" name="email" placeholder="Email@domain.com" required>
-                                </div>
+
                                 <div class="box-input">
                                     <label for="userMessage">Message</label>
                                     <textarea name="message" id="userMessage" required></textarea>
@@ -250,7 +257,7 @@
                                 </div>
                             </fieldset>
                         </form>
-                    </section>
+                    </div>
                 </div>
             </div>
         </div>

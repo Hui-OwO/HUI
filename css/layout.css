@@ -167,10 +167,7 @@ body.light-mode .flip-back-content .btn:hover { background: #4300D1; font-weight
 
 
 /* 전면 스크린샷(실제 콘텐츠) */
-.card-img .work-img img { position: absolute; top: 220px; left: 50%; transform: translateX(-50%); /* 안쪽 여백을 줘서 테두리 느낌 */ /* inset: 18px; */ width: calc(100% - 142px); height: calc(100% - 36px); object-fit: cover; border-radius: 28px; box-shadow: 0 28px 70px rgba(0,0,0,0.55); z-index: 2; display: block; transition: transform 0.28s ease, box-shadow 0.28s ease; }
-
-/* 위/아래 그라데이션 오버레이 (전면 이미지 위에 약한 쉐이딩) */
-.card-img .work-img::after { content: ""; position: absolute; inset: 18px; border-radius: 28px; pointer-events: none; z-index: 3; background: linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0)); }
+.card-img .work-img img { position: absolute; top: 80px; left: 50%; transform: translateX(-50%); /* 안쪽 여백을 줘서 테두리 느낌 */ /* inset: 18px; */ width: calc(100% - 142px); height: calc(100% - 36px); object-fit: cover; object-position: top center; border-radius: 28px; box-shadow: 0 28px 70px rgba(0,0,0,0.55); z-index: 2; display: block; transition: transform 0.28s ease, box-shadow 0.28s ease; }
 
 
 /* 라이트 모드 보정 */
