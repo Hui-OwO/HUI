@@ -118,10 +118,6 @@ a { color: #888; text-decoration: none; }
 .flip-back-content .btn { display: inline-block; padding: 15px 30px; border: none; border-radius: 15px; background: #ffffff20; color: #fff; font-size: 2.6rem; transition: background 0.3s;}
 .flip-back-content .btn:hover {background: #FFCC00; font-weight: 500; color: #000;}
 
-/* 라이트 모드 flip-back 영역 */
-body.light-mode .work-card.flip-card .flip-back { width: 100%; height: 100%; border: 1px solid #00000050; background: #00000005; color: #000; }
-body.light-mode .flip-back-content .btn { background: #00000010; color: #000; }
-body.light-mode .flip-back-content .btn:hover { background: #4300D1; font-weight: 500; color: #fff; }
 
 /* responsive: 이미지 높이만 축소 */
 @media (max-width:900px) {
@@ -163,10 +159,6 @@ body.light-mode .flip-back-content .btn:hover { background: #4300D1; font-weight
 /* 전면 스크린샷(실제 콘텐츠) */
 .card-img .work-img img { position: absolute; top: 80px; left: 50%; transform: translateX(-50%); /* 안쪽 여백을 줘서 테두리 느낌 */ /* inset: 18px; */ width: calc(100% - 142px); height: calc(100% - 36px); object-fit: cover; object-position: top center; border-radius: 28px; box-shadow: 0 28px 70px rgba(0,0,0,0.55); z-index: 2; display: block; transition: transform 0.28s ease, box-shadow 0.28s ease; }
 
-
-/* 라이트 모드 보정 */
-body.light-mode .card-img .work-img img { box-shadow: 0 20px 50px rgba(0,0,0,0.12); }
-body.light-mode .card-img .work_BG { filter: blur(12px) saturate(0.9) brightness(1.02); }
 
 /* 반응형: 모바일 높이 축소 */
 @media (max-width:900px) {
