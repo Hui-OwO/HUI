@@ -33,11 +33,21 @@
 // HTML 문서가 완전히 로드된 후 스크립트가 실행되도록 합니다.
 document.addEventListener('DOMContentLoaded', function () {
 
+    // 적용된 테마를 로드(기본: dark)
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+    } else {
+        document.body.classList.remove('light-mode');
+    }
+
     // 다크/라이트 모드 토글
     const toggleButton = document.querySelector('.dark-light-toggle');
     if (toggleButton) {
         toggleButton.addEventListener('click', () => {
-            document.body.classList.toggle('light-mode');
+            // 토글 결과에 따라 로컬스토리지에 저장
+            const isLight = document.body.classList.toggle('light-mode');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
         });
     }
 
