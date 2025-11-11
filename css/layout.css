@@ -27,7 +27,7 @@ a { color: #888; text-decoration: none; }
 
 
 /* summary */
-.summary {width: 1440px; height: auto; margin: 0 auto; padding-bottom: 180px;}
+.summary {width: 1440px; height: auto; margin: 0 auto; padding-bottom: 180px; scroll-margin-top: 180px;}
 .summary-grid { display: flex; justify-content: space-between; gap: 20px;}
 .smry_left {display: inline-block;}
 .smry_right {display: inline-block;}
