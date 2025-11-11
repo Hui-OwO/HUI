@@ -17,7 +17,7 @@ a { color: #888; text-decoration: none; }
 
 
 /* intro */
-.intro {width: 1440px; height: auto; margin: 0 auto; padding-top: 90px; box-sizing: border-box; }
+.intro {width: 100%; max-width: 1440px; height: auto; margin: 0 auto; padding-top: 90px; box-sizing: border-box; }
 .intro > div {margin: 180px 0; display: flex; justify-content: space-between; align-items: center; }
 .intro span {width: 100%; max-width: 499px; height: 500px; display: inline-block; background: url("../images/intro_Me.png") no-repeat center center;}
 .intro_text h2 {font-size: 5rem; font-weight: 700; line-height: 90%; /* letter-spacing: 1px; */ font-family: 'Druk'; color: #fff;}
@@ -27,7 +27,7 @@ a { color: #888; text-decoration: none; }
 
 
 /* summary */
-.summary {width: 1440px; height: auto; margin: 0 auto; padding-bottom: 180px; scroll-margin-top: 180px;}
+.summary {width: 100%; max-width: 1440px; height: auto; margin: 0 auto; padding-bottom: 180px; scroll-margin-top: 180px;}
 .summary-grid { display: flex; justify-content: space-between; gap: 20px;}
 .smry_left {display: inline-block;}
 .smry_right {display: inline-block;}
@@ -76,7 +76,7 @@ a { color: #888; text-decoration: none; }
 
 
 /* Works */
-.works { width: 1440px; height: auto; margin: 0 auto;}
+.works { width: 100%; max-width: 1440px; height: auto; margin: 0 auto;}
 .works h2 { font-family: 'Druk'; font-size: 8rem; font-weight: 500; line-height: 100%; letter-spacing: 0.3rem; color: #fff; margin-bottom: 40px; text-align: center; }
 .works-grid { display: flex; justify-content: space-between}
 .work_left { width: 700px; height: auto;}
