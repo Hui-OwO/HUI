@@ -102,8 +102,8 @@ address {display: flex; justify-content: space-between; padding: 50px 0; font-st
 
 .footer-left a, .footer-right p {font-size: 2rem; line-height: 150%; font-weight: 400; color: #888; margin-right: 50px;}
 .footer-left a:last-child {margin-right: 0;}
-.footer-right b {font-size: 2.4rem; line-height: 2.8rem; font-weight: 700; color: #fff;}
-.footer-right i { display: inline-block; font-size: 24px; margin-left: 20px; color: #fff;}
+.footer-right b {font-size: 2.4rem; line-height: 1.16; font-weight: 700; color: #fff;}
+.footer-right i { display: inline-block; font-size: 2.4rem; margin-left: 20px; color: #fff;}
 /* .footer-right span {width: 24px; height: 24px; display: inline-block; margin-left: 20px; background: url('../images/airplane.png') no-repeat center center;} */
 
 address p {font-size: 2rem; line-height: 150%; font-weight: 400; color: #888;}
