@@ -18,6 +18,17 @@
     .intro_text i { font-size: clamp(4.8rem, 10vw, 12rem) !important; }
 } */
 
+@media only screen and (max-width: 1470px) {
+    main, footer { padding: 0 3%; box-sizing: border-box;}
+    .intro > div { margin: 120px 0 !important; }
+
+}
+
+@media only screen and (max-width: 1444px) {
+    .intro_text p, .pdfDownload, .vision p, .skill, .edu p, .exp p, .int_center p, .learning-list span { font-size: 2.3rem !important; }
+    .skills-list p { width: 2.3rem !important; height: 2.3rem !important; }
+}
+
 @media only screen and (max-width: 1440px) {
 
     /* responsive: intro image (span) 크기 유연화 */
@@ -28,11 +39,10 @@
     .smry_right { width: 34% !important; }
 
     .head {width: 100%; }
-    
-
 }
 
-@media only screen and (max-width: 1330px) {
+
+@media only screen and (max-width: 1350px) {
     .intro_text h2 {font-size: 4rem !important; }
     .intro_text i {font-size: 11rem !important; }
     .intro_text p {margin-top: 2.5rem !important; }
@@ -42,21 +52,31 @@
 
     .Skills h3, .edu h3, .exp h3, .int_center h3, .learning h3 { font-size: 2.8rem !important; }
     .intro_text p, .pdfDownload, .vision p, .skill, .edu p, .exp p, .int_center p, .learning-list span { font-size: 2.2rem !important; }
+    .skills-list p { width: 2.2rem !important; height: 2.2rem !important; }
 
-    .skills-list p { width: 2.2rem !important; height: 2.2rem !important; display: inline-block; margin-right: 10px;}
     .edu span, .exp span { font-size: 1.8rem !important; }
 
 }
 
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1264px) {
     .intro_text h2 {font-size: 3.6rem !important; }
     .intro_text i {font-size: 10rem !important; }
     .intro_text p {margin-top: 2rem !important; }
     .pdfDownload { margin-top: 3rem !important; }
 
-    .Skills h3, .edu h3, .exp h3, .int_center h3, .learning h3 { font-size: 2.6rem !important; }
-    .intro_text p, .pdfDownload, .vision p, .skill, .edu p, .exp p, .int_center p, .learning-list span { font-size: 2rem !important; }
+    .Skills h3, .edu h3, .exp h3, .int_center h3, .learning h3 { font-size: 2.7rem !important; }
+    .intro_text p, .pdfDownload, .vision p, .skill, .edu p, .exp p, .int_center p, .learning-list span { font-size: 2.1rem !important; }
+    .skills-list p { width: 2.1rem !important; height: 2.1rem !important; }
+
+}
+
+
+@media only screen and (max-width: 1040px) {
+    .summary-grid { display: unset !important; }
+    .smry_left { width: 100% !important; }
+    .smry_right { display: flex !important; width: 100% !important; gap: 20px; }
+    .box-size3 { width: 100% !important; height: 100% !important; }
 
 
 }
