@@ -31,6 +31,7 @@
 
 @media only screen and (max-width: 1440px) {
 
+    .pdfDownload { width: 100% !important; }
     /* responsive: intro image (span) 크기 유연화 */
     .intro span { /* 최소 200px, 최댓값 499px, 기본은 뷰포트 너비의 35% */ width: clamp(200px, 35vw, 499px) !important; /* 높이는 가로 비율을 유지하도록 aspect-ratio 사용 */ aspect-ratio: 1 / 1; height: auto !important; display: inline-block; background-size: cover; /* 이미지 잘림 없이 채우기 */ background-position: center; }
     
@@ -46,7 +47,7 @@
     .intro_text h2 {font-size: 4rem !important; }
     .intro_text i {font-size: 11rem !important; }
     .intro_text p {margin-top: 2.5rem !important; }
-    .pdfDownload { width: auto !important; margin-top: 3.5rem !important; }
+    .pdfDownload { width: 100% !important; margin-top: 3.5rem !important; }
     .box { padding: 30px 32px !important; }
     .vision h2{ font-size: 5.2rem !important; }
 
@@ -60,6 +61,7 @@
     .footer-right b, .footer-right i {font-size: 2.2rem !important; }
     /* .footer-right i { font-size: 2.2rem; margin-left: 20px;} */
     .bottom_link { padding: 4.6rem 0 !important; }
+    address p {font-size: 1.8rem !important; }
 }
 
 
@@ -77,11 +79,13 @@
 }
 
 
-@media only screen and (max-width: 1040px) {
+@media only screen and (max-width: 1122px) {
     .summary-grid { display: unset !important; }
     .smry_left { width: 100% !important; }
-    .smry_right { display: flex !important; width: 100% !important; gap: 20px; }
-    .box-size3 { width: 100% !important; height: 100% !important; }
-
-
+    .box-size1 { width: 50% !important; height: 100% !important; }
+    .box-size2 { width: 50% !important; height: 100% !important; }
+    .smry_right { display: flex !important; width: 100% !important; gap: 20px; margin-top: 20px; }
+    .smry_right .box-size3 { width: 100% !important; height: 100% !important; }
+    .Skills { margin-bottom: 0 !important;}
+    .Skills p { display: none !important;}
 }
