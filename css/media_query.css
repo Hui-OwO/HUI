@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 
-
 /* 레이아웃이 좁아질 때 텍스트와 이미지가 세로로 쌓이도록 보정 */
 /* @media only screen and (max-width: 900px) {
     .intro > div { flex-direction: column-reverse; gap: 24px; align-items: center; }
@@ -18,9 +17,13 @@
     .intro_text i { font-size: clamp(4.8rem, 10vw, 12rem) !important; }
 } */
 
+
+
 @media only screen and (max-width: 1470px) {
     main, footer { padding: 0 3%; box-sizing: border-box;}
     .intro > div { margin: 120px 0 !important; }
+
+    
 
 }
 
@@ -31,7 +34,6 @@
 
 @media only screen and (max-width: 1440px) {
 
-    .pdfDownload { width: 100% !important; }
     /* responsive: intro image (span) 크기 유연화 */
     .intro span { /* 최소 200px, 최댓값 499px, 기본은 뷰포트 너비의 35% */ width: clamp(200px, 35vw, 499px) !important; /* 높이는 가로 비율을 유지하도록 aspect-ratio 사용 */ aspect-ratio: 1 / 1; height: auto !important; display: inline-block; background-size: cover; /* 이미지 잘림 없이 채우기 */ background-position: center; }
     
@@ -39,7 +41,9 @@
 
     .smry_right { width: 34% !important; }
 
-    .head {width: 100%; }
+    header { width: 100%; }
+    .head { width: 100%; }
+    
 }
 
 
@@ -47,7 +51,7 @@
     .intro_text h2 {font-size: 4rem !important; }
     .intro_text i {font-size: 11rem !important; }
     .intro_text p {margin-top: 2.5rem !important; }
-    .pdfDownload { width: 100% !important; margin-top: 3.5rem !important; }
+    .pdfDownload { margin-top: 3.5rem !important; }
     .box { padding: 30px 32px !important; }
     .vision h2{ font-size: 5.2rem !important; }
 
@@ -88,4 +92,43 @@
     .smry_right .box-size3 { width: 100% !important; height: 100% !important; }
     .Skills { margin-bottom: 0 !important;}
     .Skills p { display: none !important;}
+}
+
+@media only screen and (max-width: 1122px) {
+    .intro > div { margin: 90px 0 !important; }
+    .intro_text h2 {font-size: 3.6rem !important; }
+    .intro_text i {font-size: 9rem !important; }
+    .intro_text p {margin-top: 1.8rem !important; }
+    .pdfDownload { margin-top: 3rem !important; }
+
+    .Skills h3, .edu h3, .exp h3, .int_center h3, .learning h3 { font-size: 2.7rem !important; }
+    .intro_text p, .pdfDownload, .vision p, .skill, .edu p, .exp p, .int_center p, .learning-list span { font-size: 2.1rem !important; }
+    .skills-list p { width: 2.1rem !important; height: 2.1rem !important; }
+
+    .bottom_link { padding: 4rem 0 !important; }
+}
+
+
+
+
+/* 1440px 구간에서 .pdfDownload를 강제로 100%로 만들던 규칙 제거 */
+/* (기존에 있던 '.pdfDownload { width: 100% !important; }'는 삭제 또는 주석 처리) */
+
+/* 대신 작은 화면에서만 가득 채우도록 명시 */ /* 이 부분 삭제해도 이상해지지는 않음 */
+@media only screen and (max-width: 390px) {
+    .intro > div { flex-direction: column-reverse; gap: auto; align-items: center; } /* 필요 시 활성화 */
+    .intro span { width: min(70vw, 420px) !important; aspect-ratio: 1 / 1; }
+    .intro_text { width: calc(100% - 40px); text-align: center; }
+
+    .pdfDownload {
+        width: 100% !important;   /* 모바일에서 가득 채움 */
+        display: inline-flex;
+        padding-inline: clamp(12px, 6vw, 24px);
+        font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+    }
+}
+
+/* (기존 1350px 규칙에서 width:100% 만 제거) */
+@media only screen and (max-width: 1350px) {
+    .pdfDownload { margin-top: 3.5rem !important; /* width: 100% 제거 */ }
 }

@@ -223,6 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // 추가: flip-card 클릭/토글 처리 (터치/모바일에서 hover 대체)
+    /* Flip 효과를 제거했으므로 이 부분은 더 이상 필요하지 않습니다.
     (function () {
         const flipCards = document.querySelectorAll('.work-card.flip-card');
         if (!flipCards.length) return;
@@ -254,4 +255,5 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
     })();
+    */
 });
