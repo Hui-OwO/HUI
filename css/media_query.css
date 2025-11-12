@@ -55,6 +55,7 @@
     .box { padding: 30px 32px !important; }
     .vision h2{ font-size: 5.2rem !important; }
 
+    .works h2 { font-size: 7.4rem !important; }
     .Skills h3, .edu h3, .exp h3, .int_center h3, .learning h3 { font-size: 2.8rem !important; }
     .intro_text p, .pdfDownload, .vision p, .skill, .edu p, .exp p, .int_center p, .learning-list span { font-size: 2.2rem !important; }
     .skills-list p { width: 2.2rem !important; height: 2.2rem !important; }
@@ -80,6 +81,8 @@
     .skills-list p { width: 2.1rem !important; height: 2.1rem !important; }
 
     .bottom_link { padding: 4rem 0 !important; }
+
+    .more-btn { font-size: 5.2rem !important; }
 }
 
 
