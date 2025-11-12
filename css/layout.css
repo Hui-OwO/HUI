@@ -141,11 +141,7 @@ a { color: #888; text-decoration: none; }
 .card-img { position: relative; width: 100%; height: 100%; border-radius: 40px; overflow: hidden; display: block; background: transparent; }
 
 /* 내부 컨테이너 (이미지/배경) */
-.card-img .work-img {
-    position: relative;
-    width: 100%;
-    height: 100%; /* 부모(.flip-inner)의 높이를 따르도록 100%로 변경 */
-}
+.card-img .work-img { position: relative; width: 100%; height: 100%; /* 부모(.flip-inner)의 높이를 따르도록 100%로 변경 */ }
 
 /* 블러 처리된 배경(원본 이미지를 확대해서 흐리게) */
 .card-img .work_BG { position: absolute; inset: 0; background-size: cover; background-position: center; filter: blur(14px) saturate(0.95); transform: scale(1.06); z-index: 1; transition: filter 0.25s ease, transform 0.25s ease; }
