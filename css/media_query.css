@@ -22,6 +22,7 @@
 @media only screen and (max-width: 1470px) {
     main, footer { padding: 0 3%; box-sizing: border-box;}
     .intro > div { margin: 120px 0 !important; }
+    header { padding: 0 3%; box-sizing: border-box; }
 
     
 
