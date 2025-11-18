@@ -225,9 +225,9 @@ body.light-mode .contact-modal__close { color: #000; } */
 
 /* ====== 모바일 메뉴 ====== */
 /* 기본적으로 모바일 메뉴는 숨김 */
-.Pc_View {
+/* .Pc_View {
     display: block;
-}
+} */
 
 .Mb_View {
     display: none;
