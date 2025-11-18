@@ -136,8 +136,14 @@
     .intro_text p, .pdfDownload, .vision p, .skill, .edu p, .exp p, .int_center p, .learning-list span { font-size: 1.9rem !important; }
 
     .bottom_link { padding: 4rem 0 !important; }
+
+    .more-btn {padding: 20px 40px; font-size: 5rem; }
 }
 
+/* @media only screen and (max-width: 1024px) {
+    .more-btn {padding: 20px 40px; font-size: 5rem; }
+}
+ */
 
 
 
