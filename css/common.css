@@ -225,13 +225,17 @@ body.light-mode .contact-modal__close { color: #000; } */
 
 /* ====== 모바일 메뉴 ====== */
 /* 기본적으로 모바일 메뉴는 숨김 */
-.Mb_menu {
+.Pc_View {
+        display: none; /* PC 메뉴 숨김 */
+    }
+
+.Mb_View {
     display: none;
 }
 
 /* 화면 너비가 1024px 이하일 때 (모바일/태블릿) */
 @media (max-width: 1024px) {
-    .Pc_menu {
+    .Pc_View {
         display: none; /* PC 메뉴 숨김 */
     }
 
@@ -239,7 +243,7 @@ body.light-mode .contact-modal__close { color: #000; } */
         max-height: 70px;
     }
 
-    .Mb_menu {
+    .Mb_View {
         display: block; /* 모바일 메뉴 표시 */
     }
 }
