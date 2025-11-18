@@ -36,7 +36,7 @@
 @media only screen and (max-width: 1440px) {
 
     /* responsive: intro image (span) 크기 유연화 */
-    .intro span { /* 최소 200px, 최댓값 499px, 기본은 뷰포트 너비의 35% */ width: clamp(200px, 35vw, 499px) !important; /* 높이는 가로 비율을 유지하도록 aspect-ratio 사용 */ aspect-ratio: 1 / 1; height: auto !important; display: inline-block; background-size: cover; /* 이미지 잘림 없이 채우기 */ background-position: center; }
+    .intro span { /* 최소 200px, 최댓값 499px, 기본은 뷰포트 너비의 35% */ width: clamp(200px, 35vw, 499px) !important; /* 높이는 가로 비율을 유지하도록 aspect-ratio 사용 */ aspect-ratio: 1 / 1; height: auto !important; display: inline-block !important; background-size: cover; /* 이미지 잘림 없이 채우기 */ background-position: center; }
     
     .smry_left { width: 66% !important; }
 
@@ -82,6 +82,7 @@
 }
 
 @media only screen and (max-width: 1264px) {
+
     .intro_text h2 {font-size: 3.6rem !important; }
     .intro_text i {font-size: 10rem !important; }
     .intro_text p {margin-top: 2rem !important; }
@@ -99,6 +100,12 @@
 
 
 @media only screen and (max-width: 1122px) {
+    .intro > div { width: 100% !important; display: inline-flex !important; /* width: auto !important; */ height: auto !important; margin: 100px 0 !important; gap: clamp(10px, 15%, 300px ); }
+    .intro_text { width: 60% !important; }
+    /* .intro_text span { display: inline-block !important; } */
+
+
+
     /* summary 레이아웃 변경 */
     .summary-grid { display: unset !important; }
     .smry_left { width: 100% !important; }
@@ -183,6 +190,6 @@
 
 
 @media only screen and (max-width: 440px) {
-    #header .logo { height: 40px; }
+    #header .logo { width: 75px; height: 40px; }
     #header .logo a { mask-repeat: no-repeat; mask-image: url("data:image/svg+xml,%3Csvg width='75' height='40' viewBox='0 0 75 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='15' height='25' fill='%23FFCC00'/%3E%3Crect x='30' width='15' height='25' fill='%23FFCC00'/%3E%3Crect x='15' y='25' width='15' height='15' fill='%23FFCC00'/%3E%3Crect x='45' y='25' width='15' height='15' fill='%23FFCC00'/%3E%3Crect x='60' width='15' height='25' fill='%23FFCC00'/%3E%3Crect y='10' width='45' height='5' fill='%23FFCC00'/%3E%3Crect x='15' y='35' width='45' height='5' fill='%23FFCC00'/%3E%3C/svg%3E%0A");}
 }
