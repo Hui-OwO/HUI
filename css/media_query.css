@@ -155,3 +155,34 @@
 @media only screen and (max-width: 1350px) {
     .pdfDownload { margin-top: 3.5rem !important; /* width: 100% 제거 */ }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 440px) {
+    #header .logo { height: 40px; }
+    #header .logo a { mask-repeat: no-repeat; mask-image: url("data:image/svg+xml,%3Csvg width='75' height='40' viewBox='0 0 75 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='15' height='25' fill='%23FFCC00'/%3E%3Crect x='30' width='15' height='25' fill='%23FFCC00'/%3E%3Crect x='15' y='25' width='15' height='15' fill='%23FFCC00'/%3E%3Crect x='45' y='25' width='15' height='15' fill='%23FFCC00'/%3E%3Crect x='60' width='15' height='25' fill='%23FFCC00'/%3E%3Crect y='10' width='45' height='5' fill='%23FFCC00'/%3E%3Crect x='15' y='35' width='45' height='5' fill='%23FFCC00'/%3E%3C/svg%3E%0A");}
+}
