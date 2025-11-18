@@ -1,0 +1,26 @@
+:root { --header-color: #666; }
+
+#header 
+
+#header .logo { display: block; }
+#header .logo a { width: 100%; height: 100%; position: unset; }
+
+#header .header-right {width: auto; display: flex; gap: 10px; }
+/* #header .toggle-container { margin-right: 10px;} */
+/* #header .dark-light-toggle { width: 100%; height: 30px; } */
+#header .dark-light-toggle > div {  }
+
+#menu .fa-solid, #page .fa-solid { position: unset; transform: translateY(0) ; font-size: 2.4rem; color: #fff; }
+
+
+/* display: flex; justify-content: center; gap: 20px; margin-top: 20px;  */
+.social { display: flex; justify-content: center; }
+.social a { display: flex; justify-content: center; flex-basis: unset; flex-grow: unset; } /* 왜 unset으로 하면 내가 원하는대로 작동할까? */
+.social a i { display: inline-block; font-size: 1.8rem; }
+
+.suB_m.mm-listview > .mm-listitem::after { inset-inline-start: 10px;}
+
+.download { width: 90%; border: none; margin: 20px auto; }
+.download .pdfDownload {padding: 25px 0; background: #ffcc00; display: flex; justify-content: center; border: none; font-size: 1.8rem; font-weight: 700; border-radius: 20px; margin-top: 0;}
+.download.mm-listitem::after { border-bottom: none; display: none; position: none;}
+/* content: ""; border-color: inherit; border-bottom-width: 1px; border-bottom-style: solid; display: block; position: absolute; inset-inline-start: 20px; inset-inline-end: 20px; bottom: 0 */

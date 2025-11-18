@@ -42,12 +42,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // 다크/라이트 모드 토글
-    const toggleButton = document.querySelector('.dark-light-toggle');
-    if (toggleButton) {
-        toggleButton.addEventListener('click', () => {
-            // 토글 결과에 따라 로컬스토리지에 저장
-            const isLight = document.body.classList.toggle('light-mode');
-            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    const toggleButtons = document.querySelectorAll('.dark-light-toggle');
+    if (toggleButtons.length > 0) {
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // 토글 결과에 따라 로컬스토리지에 저장
+                const isLight = document.body.classList.toggle('light-mode');
+                localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            });
         });
     }
 

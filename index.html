@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hui's portfolio</title>
 
-    
+
     <link rel="stylesheet" href="css/media_query.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/theme.css">
     <link rel="stylesheet" href="css/svg.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/font.css">
+    <!-- Mobile menu -->
+    <link rel="stylesheet" href="css/mmenu-demo.css"> <!-- 기존 설정이랑 맞춰서 고치셈 -->
+    <link rel="stylesheet" href="css/mmenu.css">
+    <link rel="stylesheet" href="css/mmenu-common.css">
     <!-- <link rel="stylesheet" href="css/cursor.css"> -->
     <!-- <link rel="stylesheet" href="css/animation.css"> -->
     <link rel="stylesheet" crossorigin
@@ -33,7 +37,8 @@
 
 
         <header>
-            <div class="head">
+            <!-- PC Menu -->
+            <div class="head Pc_menu">
                 <h1 class="logo"><a href="index.html"><span class="blind">Hui's portfolio</span></a></h1>
                 <!-- span: 웹접근성 때문에 추가 -->
                 <nav>
@@ -97,6 +102,70 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Mobile Menu -->
+            <div class="Mb_menu">
+                <div id="page">
+                    <div id="header">
+                        <h1 class="logo"><a href="index.html"><span class="blind">Hui's portfolio</span></a></h1>
+                        <div class="header-right">
+                            <!-- 다크/라이트 모드 토글 버튼 -->
+                            <div class="toggle-container">
+                                <div class="dark-light-toggle" title="Toggle dark/light mode">
+                                    <div class="sun-icon"></div>
+                                    <div class="moon-icon"></div>
+                                </div>
+                            </div>
+                            <a href="#menu" class="fa-solid fa-bars"></a>
+                            <a href="#page" class="fa-solid fa-xmark"></a>
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+                <div id="menu">
+                    <ul id="contacts">
+                        <li class="social">
+                            <a href="javascript:void(0);" aria-label="LinkedIn" target="_blank"
+                                title="LinkedIn_new tap"><i class="fa-brands fa-linkedin-in"><span
+                                        class="blind">LinkedIn</span></i></a>
+                            <a href="https://github.com/Hui-OwO" aria-label="Github" target="_blank"
+                                title="Github_new tap"><i class="fa-brands fa-github"><span
+                                        class="blind">Github</span></i></a>
+                            <a href="javascript:void(0);" aria-label="Behance" target="_blank"
+                                title="Behance_new tap"><i class="fa-brands fa-behance"><span
+                                        class="blind">Behance</span></i></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">About</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Work</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Blog</a>
+                        </li>
+                        <li class="more">
+                            <span>more</span>
+                            <ul class="suB_m">
+                                <li><a href="javascript:void(0)">Now</a></li>
+                                <li><a href="javascript:void(0)">Bucket List</a></li>
+                                <li><a href="javascript:void(0)">Links</a></li>
+                                <li><a href="javascript:void(0)">Uses</a></li>
+                                <li><a href="javascript:void(0)">Attribution</a> </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Contact</a>
+                        </li>
+                        <li class="download">
+                            <a class="pdfDownload" href="파일 경로/파일이름.확장자" download="hui_Resume" role="button">Download
+                                Resume</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </header>
         <main>
             <section class="intro">
@@ -104,7 +173,8 @@
                     <div class="intro_text">
                         <h2>Hi, I'm<br><i>GYEONGHUI JEONG</i></h2>
                         <p>I am looking for opportunities in web and 3D design.</p>
-                        <a class="pdfDownload" href="파일 경로/파일이름.확장자" download="hui_Resume" role="button">Download Resume</a>
+                        <a class="pdfDownload" href="javascript:void(0);" download="hui_Resume" role="button">Download
+                            Resume</a> <!-- Replace "파일 경로/파일이름.확장자" with the actual file path and name -->
                     </div>
                     <span></span>
                 </div>
@@ -290,13 +360,14 @@
                                     <div class="card-img">
                                         <div class="work-img more" onclick="location.href='subpage/work.html'">
                                             <!-- 배경 블러 효과를 위한 span 추가 -->
-                                            <span class="work_BG" style="background: url('images/works_more.jpg');"></span>
+                                            <span class="work_BG"
+                                                style="background: url('images/works_more.jpg');"></span>
                                             <button type="button" class="more-btn">More</button>
                                         </div>
                                         <span class="blind">More works</span>
                                     </div>
                                 </div>
-                            </div>    
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -411,6 +482,12 @@
             <p>Thank you for contacting me. I will get back to you as soon as possible. 🚀</p>
         </div>
     </div>
+
+
+
+    <!-- mobile menu js -->
+    <script src="js/mmenu.js"></script>
+    <script src="js/mmenu-script.js"></script>
 </body>
 
 </html>

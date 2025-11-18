@@ -27,6 +27,7 @@ header {width: 100%; height: 100%; max-height: 90px; background: #00000040; back
 nav { width: auto; height: auto; display: flex; align-items: center; border-radius: 50px; padding: 9px 10px; box-sizing: border-box; backdrop-filter: blur(24px); background: #ffffff20; /* 단색 배경 */ position: relative; z-index: 1; -webkit-backdrop-filter: blur(24px); }
 nav::before { content: ""; position: absolute; inset: 0; border-radius: 50px; padding: 1px; /* border 두께 */ background: linear-gradient(90deg, #fff, #ffffff40); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; z-index: 0; pointer-events: none; }
 
+.logo {display: block; width: 94px; height: 50px; }
 /* logo는 svg.css에 있음 */
 
 .blind { border: 0; clip: rect(0 0 0 0); clip-path: inset(50%); width: 1px; height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; white-space: nowrap; }
@@ -217,3 +218,28 @@ body.light-mode .contact-modal__close { color: #000; } */
 
 
 
+
+
+
+
+
+/* ====== 모바일 메뉴 ====== */
+/* 기본적으로 모바일 메뉴는 숨김 */
+.Mb_menu {
+    display: none;
+}
+
+/* 화면 너비가 1024px 이하일 때 (모바일/태블릿) */
+@media (max-width: 1024px) {
+    .Pc_menu {
+        display: none; /* PC 메뉴 숨김 */
+    }
+
+    header {
+        max-height: 70px;
+    }
+
+    .Mb_menu {
+        display: block; /* 모바일 메뉴 표시 */
+    }
+}
