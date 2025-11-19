@@ -181,9 +181,14 @@
     .work_left .work-card:last-child, .work_right .work-card:last-child { margin-top: 0 !important;}
     .work_right .work-card:first-child { margin-top: 30px !important;}
     .work_right .work-info p { height: 80px !important; }
+    .work-info p { margin-top: 10px !important; }
 
-
-
+    footer { padding-top: 180px !important;}
+    .bottom_link { display: block !important; }
+    .footer-left { margin-bottom: 20px !important; }
+    .footer-left a, .footer-right p { font-size: 1.6rem !important; margin-right: 30px !important; }
+    .footer-left a:last-child { margin-right: 0 !important; }
+    .footer-right { justify-content: space-between;}
 }
 
 /* (기존 1350px 규칙에서 width:100% 만 제거) */
