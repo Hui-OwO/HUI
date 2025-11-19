@@ -175,9 +175,10 @@
     .work_left, .work_right { width: 100% !important;  }
     
     .work-info { padding-top: 20px !important;}
+    .work-card.flip-card { margin-bottom: 60px !important;}
     .work_left .work-card:last-child { margin-top: 0 !important; }
     .work_right .work-card:last-child { margin: 0 !important; }
-    .work_right .work-card:first-child { margin-top: 30px !important;}
+    .work_right .work-card:first-child { margin-top: 40px !important;}
     .work-info p { height: auto !important; margin-top: 10px !important; }
 
     footer { padding-top: 180px !important;}
