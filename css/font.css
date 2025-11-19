@@ -1,0 +1,40 @@
+/* url(src:%20url%28/) */
+
+@font-face {
+	font-family: 'Druk';
+	font-weight: 500;
+	src: url(../font/Druk-MediumItalic-Trial.eot);
+	src: url(../font/Druk-MediumItalic-Trial.eot?#iefix) format('embedded-opentype'),
+	url(../font/Druk-MediumItalic-Trial.woff) format('woff'),
+	url(../font/Druk-MediumItalic-Trial.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Druk';
+	font-weight: 700;
+    font-style: normal;
+	src: url(../font/Druk-Bold-Trial.eot);
+	src: url(../font/Druk-Bold-Trial.eot?#iefix) format('embedded-opentype'),
+	url(../font/Druk-Bold-Trial.woff) format('woff'),
+	url(../font/Druk-Bold-Trial.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Druk';
+	font-weight: 700;
+    font-style: italic;
+	src: url(../font/Druk-BoldItalic-Trial.eot);
+	src: url(../font/Druk-BoldItalic-Trial.eot?#iefix) format('embedded-opentype'),
+	url(../font/Druk-BoldItalic-Trial.woff) format('woff'),
+	url(../font/Druk-BoldItalic-Trial.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: '이름';
+	font-weight: 700;
+    font-style: italic;
+	src: url(파일명.eot);
+	src: url(파일명.eot?#iefix) format('embedded-opentype'),
+	url(파일명.woff) format('woff'),
+	url(파일명.ttf) format('truetype');
+}

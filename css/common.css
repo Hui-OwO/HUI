@@ -1,0 +1,249 @@
+@charset "UTF-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css");  /* pretendard 글꼴 */
+
+
+/* 전체 정리 ctrl+A, ctrl+I */
+* { margin: 0; padding: 0; font-size: 10px; font-family: 'Pretendard', 'Druk'} /* 앞에 있는 폰트가 우선순위 높음. */
+html { overflow-x: hidden;}
+/* html {overflow-x: hidden; font-family: 'Pretendard-Regular'; } */
+ul li { list-style: none; }
+a { color: #888; text-decoration: none; }
+
+/* @charset="UTF-8" */
+/* css 리셋파일 안에 들어가는 내용임 */
+
+
+
+
+
+
+/* 배경색 000000 */
+/* 1440px */
+.wrap { width: 100%; background: #000; transition: background-color 0.3s;}
+/* 상단메뉴 */
+header {width: 100%; height: 100%; max-height: 90px; background: #00000040; backdrop-filter: blur(24px); position: fixed; top: 0; z-index: 999; transition: background-color 0.3s; -webkit-backdrop-filter: blur(24px);}
+.head {width: 100%; max-width: 1440px; height: 100%; display: flex; justify-content: space-between; align-items: center; margin: 0 auto;}
+/* nav {width: 458px; height: 52px; display: flex; align-items: center; border: 1px solid #fff; border-radius: 50px; padding: 9px 10px; box-sizing: border-box; background: #ffffff20; backdrop-filter: blur(24px);} */
+nav { width: auto; height: auto; display: flex; align-items: center; border-radius: 50px; padding: 9px 10px; box-sizing: border-box; backdrop-filter: blur(24px); background: #ffffff20; /* 단색 배경 */ position: relative; z-index: 1; -webkit-backdrop-filter: blur(24px); }
+nav::before { content: ""; position: absolute; inset: 0; border-radius: 50px; padding: 1px; /* border 두께 */ background: linear-gradient(90deg, #fff, #ffffff40); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; z-index: 0; pointer-events: none; }
+
+.logo {display: block; width: 94px; height: 50px; }
+/* logo는 svg.css에 있음 */
+
+.blind { border: 0; clip: rect(0 0 0 0); clip-path: inset(50%); width: 1px; height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; white-space: nowrap; }
+
+.head ul {display: flex; align-items: center;}
+.head li {display: inline-block;}
+
+
+
+.head > nav a {font-size: 2rem; font-weight: 400; line-height: 2.4rem; padding: 5px 15px; border-radius: 50px; color: #aaa; }
+.head > nav li {margin-right: 5px;}
+.head > nav li:nth-child(4) {margin-right: 15px;}
+.head > nav li:last-child {margin-right: 0;}
+.head > nav li:last-child a {color: #000; background: #FFCC00; border: none; cursor: pointer; transition: background 0.2s, color 0.2s;}
+.nav_more {display: flex; align-items: center;}
+
+
+
+/* 드롭다운 메뉴 스타일 */
+.nav-item-more { position: relative; }
+.nav-item-more .fa-chevron-down { font-size: 1.2rem; text-align: center; margin-left: 4px; transition: transform 0.2s ease; }
+
+
+.dropdown-content { display: none; position: absolute; top: 130%; left: 10%; transform: translateX(-54%); width: 620px; background: #1a1a1a; border: 1px solid #333; box-shadow: 0 16px 32px rgba(0,0,0,0.4); z-index: 1; border-radius: 20px; padding: 15px; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, top 0.2s ease; display: flex; gap: 10px; }
+.dropdown-section { display: flex; flex-direction: column; gap: 10px; }
+.dropdown-section:first-child { flex-grow: 1; }
+
+/* dropdown-card — 두께 10px 적용(가시성/클리핑 보정) */
+.nav-item-more .dropdown-card { display: flex; /* flex-grow: 1; */ align-items: center; gap: 16px; padding: 12px; border-radius: 14px; /* border 두께에 맞춰 radius 조정 */ text-decoration: none; transition: background-color 0.2s, border-color 0.2s, transform 0.2s; background: #2a2a2a; box-sizing: border-box; /* border를 element 크기 안에 포함 */ background-clip: padding-box; /* border 내부로 배경 잘림 방지 */ border: 1px solid #ffffff40; }
+
+/* 큰 카드(이미지)용은 약간 더 얇게 유지하거나 동일하게 적용 */
+.nav-item-more .dropdown-card.large { width: 100%; height: 150px; flex-grow: 1; /* padding: 0; */ align-items: stretch; position: relative; overflow: hidden; border-radius: 16px; box-sizing: border-box; background-clip: padding-box; border: 1px solid #ffffff40; }
+
+.nav-item-more .dropdown-card.large img { width: 60%; height: auto; object-fit: cover; object-position: center; border-radius: 16px; transition: transform 0.3s ease; }
+
+/* 오른쪽 열의 카드들만 동일 높이로 확장 */
+.dropdown-section:nth-child(2) .dropdown-card { flex: 1 1 0; /* 모두 같은 비율로 늘어남 */ min-height: 0; /* flexbox에서 overflow 방지 */ display: flex; align-items: center; /* 내용 수직 중앙 정렬(필요시 변경) */ }
+
+
+/* hover 시 테두리 강조 */
+.nav-item-more .dropdown-card:hover { background-color: #3a3a3c; border-color: rgba(255,255,255,0.12); }
+
+.card-text-overlay h4, .card-text h4 { font-size: 1.8rem; font-weight: 400; color: #fff;}
+.card-text-overlay p, .card-text p { font-size: 1.6rem; color: #888; margin: 0; }
+
+.card-icon i { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background-color: #3a3a3c; border-radius: 8px; font-size: 2rem; color: #ddd; }
+
+
+/* JS로 제어하기 위한 클래스 추가 */
+.nav-item-more.is-open .dropdown-content { display: flex; opacity: 1; visibility: visible; top: calc(100% + 20px); } /* 높이조절 */
+.nav-item-more.is-open .fa-chevron-down { transform: rotate(180deg); }
+
+
+
+/* 다크/라이트 모드 토글 버튼 스타일 */
+.dark-light-toggle { background: none; border: none; cursor: pointer; padding: 0; width: 50px; height: 50px; position: relative; }
+.dark-light-toggle > div { position: absolute; top: 0; left: 0; width: 100%; height: 100%; transition: opacity 0.3s ease, transform 0.3s ease; }
+
+/* 다크모드일 때 (기본) */
+/* 버튼은 svg.css에 있음 */
+
+
+
+
+
+
+
+/* footer */
+footer { width: 100%; max-width: 1440px; height: auto; margin: 0 auto; padding-top: 210px; }
+.bottom_link {width: 100%; height: auto; border-top: 1px solid #888; border-bottom: 1px solid #888; padding: 54px 0; display: flex; justify-content: space-between; align-items: center;}
+address {display: flex; justify-content: space-between; padding: 50px 0; font-style: normal; font-size: 2rem; line-height: 2.4rem; font-weight: 400; color: #888; }
+.footer-right { display: flex;}
+
+.footer-left a, .footer-right p {font-size: 2rem; line-height: 150%; font-weight: 400; color: #888; margin-right: 50px;}
+.footer-left a:last-child {margin-right: 0;}
+.footer-right b {font-size: 2.4rem; line-height: 1.16; font-weight: 700; color: #fff;}
+.footer-right i { display: inline-block; font-size: 2.4rem; margin-left: 20px; color: #fff;}
+/* .footer-right span {width: 24px; height: 24px; display: inline-block; margin-left: 20px; background: url('../images/airplane.png') no-repeat center center;} */
+
+address p {font-size: 2rem; line-height: 150%; font-weight: 400; color: #888;}
+
+
+
+
+
+/* Contact modal - bottom slide up */
+.contact-modal { position: fixed; width: 100%; inset: 0; z-index: 100000; display: flex; align-items: flex-end; justify-content: center; pointer-events: none; }
+.contact-modal__backdrop { position: absolute; width: 100%; inset: 0; background: #ffffff20; opacity: 0; transition: opacity 240ms ease; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+.contact-modal__panel { position: relative; width: 100%; max-width: 550px; margin: 0 20px 20px; background: #0b0b0b; color: #fff; border-radius: 12px; transform: translateY(110%); transition: transform 300ms cubic-bezier(.2,.8,.2,1); box-shadow: 0 24px 48px rgba(0,0,0,0.6); padding: 28px; pointer-events: auto; }
+.contact-modal__panel h3 { font-size: 2.4rem; margin-bottom: 8px; }
+.contact-modal__panel p { color: #bdbdbd; margin-bottom: 20px; font-size: 1.6rem; }
+
+
+/* 탭 스타일 */
+.contact-modal__tabs { display: flex; gap: 12px; background: #191919; padding: 5px; border-radius: 15px; margin-bottom: 30px; align-items: center; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02); }
+.tab-btn { flex: 1; appearance: none; background: transparent; border: 1px solid rgba(255,255,255,0.04); padding: 12px 18px; border-radius: 15px; color: #bdbdbd; font-weight: 700; font-size: 1.6rem; cursor: pointer; transition: all 160ms ease; box-shadow: none; }
+.tab-btn:hover { color: #fff; }
+.tab-btn.active { color: #fff; background: #1c1c1c; box-shadow: 0 6px 18px #FFCC0010, inset 0 0 0 3px #ffffff05; border-color: #ffffff0f; }
+
+
+/* Quick connect 전용으로, 탭 콘텐츠는 기본 노출 */
+.contact-tab-content { display: block; }
+
+.modal-socials { display: flex; justify-content: center; gap: 24px; margin-bottom: 24px; }
+.modal-socials a { color: #8d8d92; font-size: 2rem; transition: color 0.2s; }
+.modal-socials a:hover { color: #fff; }
+.modal-socials a i { font-size: 2rem; }
+
+.connect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+.connect-card { display: block; background: #1c1c1c; border-radius: 12px; padding: 20px; text-decoration: none; color: #fff; transition: background 0.2s; border: 1px solid #2a2a2c; }
+.connect-card:hover { background: #2c2c2e; }
+.card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.card-header i { font-size: 1.8rem; color: #a9a9b0; }
+.card-header h4 { font-size: 1.6rem; font-weight: 600; color: #fff; }
+.card-main { font-size: 1.5rem !important; font-weight: 500; color: #fff !important; margin-bottom: 4px !important; }
+.card-sub { font-size: 1.4rem !important; color: #8d8d92 !important; margin: 0 !important; }
+
+.availability-status { display: flex; align-items: center; justify-content: center; background: #1c2e25; color: #30d158; border-radius: 12px; padding: 12px; font-size: 1.5rem; }
+.availability-status span { width: 8px; height: 8px; background: #30d158; border-radius: 50%; margin-right: 10px; }
+
+
+
+
+fieldset { border: none; margin: 0; padding: 0; }
+
+fieldset > .box-input:last-child { margin-top: 20px; }
+
+/* Email form: name + email 한 줄 정렬 */
+.email-row { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 14px; }
+.email-row .box-input { flex: 1 1 0; min-width: 0; /* overflow 방지 */ }
+
+/* 모바일에서 세로 스택으로 전환 */
+@media (max-width:700px) {
+    .email-row { flex-direction: column; gap: 12px; }
+}
+
+/* 기존 .box-input 스타일과 충돌 없도록 유지 */
+.box-input label { display: block; color: #d0d0d0; font-size: 1.6rem; margin-bottom: 6px; }
+.box-input input[type="text"], .box-input input[type="email"], .box-input textarea { width: 100%; background: #0b0b0b; border: 1px solid #ffffff20; color: #e6e6e6; padding: 14px 16px; box-sizing: border-box; border-radius: 10px; font-size: 1.6rem; outline: none; transition: border-color 120ms ease, box-shadow 120ms ease; box-shadow: inset 0 -1px 0 rgba(255,255,255,0.01); }
+.box-input input::placeholder, .box-input textarea::placeholder { color: #9b9b9b; }
+
+
+
+/* textarea 높이 및 리사이즈 제한 */
+.box-input textarea { min-height: 140px; resize: vertical; line-height: 1.6; }
+
+/* 포커스 스타일 */
+.box-input input:focus, .box-input textarea:focus { border-color: #FFCC00; box-shadow: 0 6px 24px #FFCC0030; }
+
+/* 버튼 스타일 */
+.btn-send { display: inline-block; width: 100%; padding: 14px 18px; border-radius: 12px; border: none; color: #000; font-size: 1.6rem; font-weight: 700; cursor: pointer; background: #FFCC00; transition: transform 120ms ease, box-shadow 120ms ease; }
+.btn-send:hover { transform: translateY(-2px); }
+
+
+/* 기타 정렬/여백 조정 */
+.contact-modal__content { padding-top: 4px; }
+/* .contact-tab-content { padding: 6px 0 0; } */
+/* .modal-socials { margin-bottom: 18px; } */
+
+
+/* 접근성 관련: 탭 버튼 포커스 시 윤곽선 명확히 */
+/* .tab-btn:focus { outline: 3px solid rgba(115,92,255,0.14); outline-offset: 2px; } */
+
+/* 기존 규칙들과 충돌이 생길 경우 우선 적용되도록 specificity 보강 */
+.contact-modal__panel .contact-modal__tabs,
+.contact-modal__panel .tab-btn,
+.contact-modal__panel .email-me .gform input,
+.contact-modal__panel .email-me .gform textarea { -webkit-font-smoothing: antialiased; }
+
+
+/* open state */
+.contact-modal.open { pointer-events: auto; }
+.contact-modal.open .contact-modal__backdrop { opacity: 1; }
+.contact-modal.open .contact-modal__panel { transform: translateY(0%); }
+
+/* thankyou_message -> 모달 스타일 */
+.thankyou_message { display: none; /* 기본 숨김 */ position: fixed; inset: 0; z-index: 100001; align-items: center; justify-content: center; pointer-events: auto; background: rgba(0,0,0,0.45); /* 뒤 배경 어둡게 */ }
+.thankyou_message p { background: #FFF; color: #000; padding: 24px 32px; border-radius: 12px; box-shadow: 0 24px 48px rgba(0,0,0,0.6); font-size: 1.6rem; max-width: 90%; text-align: center; }
+
+
+
+/* close button & light mode */
+/* .contact-modal__close { position: absolute; top: 10px; right: 12px; background: transparent; border: none; color: #fff; font-size: 3.2rem; cursor: pointer; z-index: 10; }
+body.light-mode .contact-modal__close { color: #000; } */
+
+/* prevent body scroll while modal open */
+.modal-open { overflow: hidden !important; }
+
+
+
+
+
+
+
+
+/* ====== 모바일 메뉴 ====== */
+/* 기본적으로 모바일 메뉴는 숨김 */
+/* .Pc_View {
+    display: block;
+} */
+
+.Mb_View {
+    display: none;
+}
+
+/* 화면 너비가 1024px 이하일 때 (모바일/태블릿) */
+@media (max-width: 1024px) {
+    .Pc_View {
+        display: none; /* PC 메뉴 숨김 */
+    }
+
+    header {
+        max-height: 70px;
+    }
+
+    .Mb_View {
+        display: block; /* 모바일 메뉴 표시 */
+    }
+}

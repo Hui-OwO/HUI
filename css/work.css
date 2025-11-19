@@ -1,0 +1,112 @@
+/* works_page */
+.works_page .works { max-width: 1440px; margin: 0 auto; padding-top: 150px; }
+.works_page .works h2 { font-family: 'Druk'; font-size: 8rem; font-weight: 500; line-height: 1; letter-spacing: 0.3rem; color: #fff; text-align: center;  margin-bottom: 90px; }
+
+.works-view-toggle { display: flex; gap: 12px; justify-content: flex-end; margin-bottom: 24px; }
+.view-btn { padding: 8px 24px; border-radius: 24px; border: none; background: #222; color: #fff; font-size: 1.8rem; cursor: pointer; opacity: 0.7; transition: background 0.2s, opacity 0.2s; }
+.view-btn.active { background: #FFCC00; color: #222; opacity: 1; }
+.works-grid.grid-view { display: flex; flex-wrap: wrap; gap: 40px; }
+.works-grid.list-view { display: block; }
+.works-grid.list-view .work-card { display: flex; flex-direction: row; align-items: flex-start; width: 100%; margin-bottom: 40px; background: none; box-shadow: none; }
+.works-grid.list-view .work-img { width: 320px; height: 220px; border-radius: 24px; margin-right: 32px; }
+
+/* 그리드 카드 스타일 추가 */
+.works-grid.grid-view { display: flex; flex-wrap: wrap; gap: 30px; }
+
+/* 카드 기본 스타일 */
+.works-grid.grid-view .work-card { width: calc((100% - 30px * 3) / 4); /* 기본 4열 */ background: #ffffff15; border-radius: 16px; padding: 18px; box-shadow: 0 8px 30px #ffffff20; display: flex; /* 변경: block -> flex */ flex-direction: column; /* 카드 내부를 세로 스택으로 */ box-sizing: border-box; transition: transform 0.18s ease, box-shadow 0.18s ease; border: 1px solid #ffffff20; min-height: 380px; /* 카드 높이 확보 (필요시 조절) */ }
+body.light-mode .works-grid.grid-view .work-card { border: 1px solid #00000020; }
+
+
+/* 이미지 블록은 수축하지 않도록 */
+.works-grid.grid-view .work-card > div:first-child { flex: 0 0 auto; }
+
+/* work-info가 남은 공간을 채우도록 */
+.works-grid.grid-view .work-info { padding-top: 0; width: 100%; display: flex; flex-direction: column; flex: 1 1 auto; }
+
+/* work_bottom을 아래로 밀기 */
+.work_bottom { /* margin-top: 18px; */ margin-top: auto; display: flex; flex-direction: column; justify-content: end; }
+
+/* 호버 효과 */
+.works-grid.grid-view .work-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px #ffffff30; }
+
+/* 라이트 모드에서 그림자 색상(하양)으로 덮어쓰기 */
+body.light-mode .works-grid.grid-view .work-card { box-shadow: 0 18px 40px #00000010; }
+body.light-mode .works-grid.grid-view .work-card:hover { box-shadow: 0 18px 40px #00000020; }
+
+/* 모바일에서 효과 축소 */
+@media (max-width:600px) {
+    .works-grid .work-card:hover > a { transform: translateY(-3px); }
+    /* 다크 모드(기본) 모바일 그림자 */
+    .works-grid .work-card:hover > a .work-img { box-shadow: 0 10px 24px #ffffff10; }
+    /* 라이트 모드 모바일 오버라이드 */
+    body.light-mode .works-grid .work-card:hover > a .work-img { box-shadow: 0 10px 24px #00000030; }
+}
+
+
+
+/* 이미지 스타일 */
+/* .works-grid.grid-view .W_c-img { overflow: hidden; border-radius: 12px; box-shadow: 0 6px 20px #0000001f; } */
+.works-grid.grid-view .work-img { width: 100%; height: 160px; border-radius: 12px; background-size: cover; background-position: top center; margin-bottom: 12px; box-shadow: none; box-sizing: border-box; border: 1px solid #555; }
+
+/* 카드 내용 정렬 및 텍스트 스타일 */
+.works-grid.grid-view .work_top { display: flex; justify-content: space-between; align-items: center; }
+.works-grid.grid-view .work_top strong { display: inline-block; font-size: 2.2rem; margin-bottom: 6px; color: #fff; }
+.works-grid.grid-view .work_top span { display: inline-block; font-size: 1.6rem; font-weight: 400; color: #FFCC00; }
+.works-grid.grid-view .work-info p { margin: 0; color: #888; font-size: 1.5rem; line-height: 1.45; margin-top: 8px; }
+
+body.light-mode .works-grid.grid-view .work_top strong { color: #000; }
+body.light-mode .works-grid.grid-view .work_top span { color: #4300D1; }
+body.light-mode .works-grid.grid-view .work-info p { color: #666; }
+
+/* 리스트 뷰 유지 규칙(우선순위 보장) */
+.works-grid.list-view .work-card { width: 100%; }
+
+/* 반응형: 3열 (큰 태블릿 / 작은 데스크탑) */
+@media (max-width:1200px) {
+    .works-grid.grid-view .work-card { width: calc((100% - 40px * 2) / 3); }
+}
+/* 반응형: 2열 (태블릿) */
+@media (max-width:900px) {
+    .works-grid.grid-view .work-card { width: calc((100% - 40px) / 2); }
+    .works-grid.grid-view .work-img { height: 160px; }
+}
+/* 반응형: 1열 (모바일) */
+@media (max-width:600px) {
+    .works-grid.grid-view { gap: 20px; }
+    .works-grid.grid-view .work-card { width: 100%; padding: 14px; }
+    .works-grid.grid-view .work-img { height: 200px; border-radius: 12px; }
+}
+
+
+/* tag pills */
+.works-grid .tag-list { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
+.works-grid .tag { background: #ffffff1f; color:#fff; padding:8px 12px; border-radius:999px; font-size:1.2rem; font-weight:600; letter-spacing:0.02em; display:inline-block; box-shadow: 0 4px 14px #0000001f; border:1px solid #ffffff0f; }
+
+/* 라이트 모드 오버라이드 */
+body.light-mode .works-grid .tag { background: #f0f0f0; color:#222; box-shadow: 0 6px 18px #0000000a; border:1px solid #0000000f; }
+
+/* 반응형 조정 */
+@media (max-width:600px) {
+    .works-grid .tag { font-size:1.1rem; padding:6px 10px; }
+}
+
+
+/* 작업 카드 내부 액션 버튼 */
+.work-actions { margin-top: 18px; display: flex; justify-content: space-between; align-items: end; gap: 10px; }
+.work-actions .btn-visit, .work-actions .btn-details { display: inline-block; width: 112px; padding: 10px 14px; border-radius: 12px; font-size: 1.4rem; text-align: center; text-decoration: none; cursor: pointer; transition: background 0.18s, color 0.18s, box-shadow 0.18s; border: 1px solid #ffffff0f; }
+
+/* 다크 기본 버튼 스타일 */
+.work-actions .btn-visit { background: #ffffff0f; color: #fff; }
+.work-actions .btn-details { background: transparent; color: #fff; border-color: #ffffff2e; }
+
+/* hover */
+.work-actions .btn-visit:hover { background: #ffffff1f; }
+.work-actions .btn-details:hover { background: #ffffff0f; }
+
+/* 라이트 모드 오버라이드 */
+body.light-mode .work-actions .btn-visit { background: #4300D1; color: #fff; border-color: #0000000f; box-shadow: 0 8px 24px #4300d11f; }
+body.light-mode .work-actions .btn-details { background: #fff; color: #222; border-color: #0000000f; }
+body.light-mode .work-actions .btn-visit:hover { opacity: 0.95; }
+body.light-mode .work-actions .btn-details:hover { background: #f2f2f2; }
+
