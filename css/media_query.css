@@ -169,6 +169,7 @@
         font-size: clamp(1.6rem, 3.2vw, 2.2rem);
     }
 
+    .vision h2 { font-size: 4rem !important; }
     .works h2 {margin-bottom: 30px !important;}
     .smry_left_bottom { display: unset !important;}
     .box-size1, .box-size2 { width: 100% !important; height: 100% !important; margin-top: 20px;}
