@@ -151,7 +151,12 @@
 /* (기존에 있던 '.pdfDownload { width: 100% !important; }'는 삭제 또는 주석 처리) */
 
 /* 대신 작은 화면에서만 가득 채우도록 명시 */ /* 이 부분 삭제해도 이상해지지는 않음 */
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 490px) {
+    /* 로고 크기 조절 */
+    #header .logo { width: 75px; height: 40px; }
+    #header .logo a { mask-repeat: no-repeat; mask-image: url("data:image/svg+xml,%3Csvg width='75' height='40' viewBox='0 0 75 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='15' height='25' fill='%23FFCC00'/%3E%3Crect x='30' width='15' height='25' fill='%23FFCC00'/%3E%3Crect x='15' y='25' width='15' height='15' fill='%23FFCC00'/%3E%3Crect x='45' y='25' width='15' height='15' fill='%23FFCC00'/%3E%3Crect x='60' width='15' height='25' fill='%23FFCC00'/%3E%3Crect y='10' width='45' height='5' fill='%23FFCC00'/%3E%3Crect x='15' y='35' width='45' height='5' fill='%23FFCC00'/%3E%3C/svg%3E%0A");}
+
+
     .intro > div { flex-direction: column-reverse; gap: auto; align-items: center; } /* 필요 시 활성화 */
     .intro span { width: min(70vw, 420px) !important; aspect-ratio: 1 / 1; }
     .intro_text { width: calc(100% - 40px); text-align: center; }
@@ -162,6 +167,18 @@
         padding-inline: clamp(12px, 6vw, 24px);
         font-size: clamp(1.6rem, 3.2vw, 2.2rem);
     }
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 /* (기존 1350px 규칙에서 width:100% 만 제거) */
@@ -194,8 +211,3 @@
 
 
 
-
-@media only screen and (max-width: 440px) {
-    #header .logo { width: 75px; height: 40px; }
-    #header .logo a { mask-repeat: no-repeat; mask-image: url("data:image/svg+xml,%3Csvg width='75' height='40' viewBox='0 0 75 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='15' height='25' fill='%23FFCC00'/%3E%3Crect x='30' width='15' height='25' fill='%23FFCC00'/%3E%3Crect x='15' y='25' width='15' height='15' fill='%23FFCC00'/%3E%3Crect x='45' y='25' width='15' height='15' fill='%23FFCC00'/%3E%3Crect x='60' width='15' height='25' fill='%23FFCC00'/%3E%3Crect y='10' width='45' height='5' fill='%23FFCC00'/%3E%3Crect x='15' y='35' width='45' height='5' fill='%23FFCC00'/%3E%3C/svg%3E%0A");}
-}

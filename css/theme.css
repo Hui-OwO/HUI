@@ -23,6 +23,24 @@ body.light-mode .head > nav li:last-child a { color: #fff; background: #4300D1; 
 body.light-mode .pdfDownload { background: #4300D1; color: #fff; }
 
 
+/* == Mb_View 라이트 모드 == */
+body.light-mode #menu .fa-solid, body.light-mode #page .fa-solid { color: #000; }
+body.light-mode .mm-navbar, body.light-mode .mm-panel { background: #f2f2f7; }
+body.light-mode .mm-navbar__title>span { color: #000; }
+body.light-mode .mm-menu a, .mm-menu a:active, .mm-menu a:hover, .mm-menu a:link, .mm-menu a:visited { color: #000; }
+body.light-mode .mm-menu--theme-light { --mm-color-icon: #000; }
+body.light-mode .social a i { color: #000; }
+body.light-mode .mm-listitem:after, body.light-mode .mm-navbar { border-bottom-color: #00000040; }
+
+
+
+body.light-mode .mm-wrapper__blocker { background: #00000040; }
+body.light-mode .download .pdfDownload { color: #fff !important; }
+
+
+
+
+
 
 /* 텍스트 색상 */
 body.light-mode .intro_text h2, body.light-mode .intro_text i, body.light-mode .Skills h3, body.light-mode .edu h3, body.light-mode .exp h3, body.light-mode .int_center h3, body.light-mode .learning h3, body.light-mode .work-info strong, body.light-mode .footer-right b, body.light-mode .works h2, body.light-mode .Skills p, body.light-mode .edu p, body.light-mode .exp p, body.light-mode .int_center p, body.light-mode .learning p, body.light-mode .work-info span { color: #000; }
