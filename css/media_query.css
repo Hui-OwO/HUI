@@ -186,12 +186,14 @@
     .work-info p { margin-top: 10px !important; }
 
     footer { padding-top: 180px !important;}
-    .bottom_link { display: block !important; }
+.bottom_link { display: block !important; padding: 3rem 0 !important; }
     .footer-left { margin-bottom: 20px !important; }
     .footer-left a, .sc_normal, .footer-right p { font-size: 1.6rem !important; }
-    .footer-left a, .footer-right p { margin-right: 30px !important; }
+    .footer-left a, .footer-right p { margin-right: 3rem !important; }
     /* .footer-left a:last-child { margin-right: 0 !important; } */
     .footer-right { justify-content: space-between;}
+    .footer-right b, .footer-right i { font-size: 2rem !important; }
+    address { padding: 3rem 0 !important; }
 }
 
 
