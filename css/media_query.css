@@ -162,6 +162,7 @@
     .intro span { width: min(70vw, 420px) !important; aspect-ratio: 1 / 1; margin-bottom: 40px; }
     .intro_text { width: calc(100% - 40px); text-align: center; }
 
+    .intro_text i { font-size: 7rem !important; }
     .pdfDownload {
         width: 100% !important;   /* 모바일에서 가득 채움 */
         display: inline-flex;
