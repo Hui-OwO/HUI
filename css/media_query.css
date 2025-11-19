@@ -51,7 +51,7 @@
     .intro_text h2 {font-size: 4rem !important; }
     .intro_text i {font-size: 11rem !important; }
     .intro_text p {margin-top: 2.5rem !important; }
-    .pdfDownload { margin-top: 3.5rem !important; }
+    .pdfDownload { margin-top: 3.5rem !important; /* width: 100% 제거 */ }
     .box { padding: 30px 32px !important; }
     
     /* .vision의 고정 높이를 제거하고 내용에 따라 자동 조절되도록 변경 */
@@ -191,10 +191,7 @@
     .footer-right { justify-content: space-between;}
 }
 
-/* (기존 1350px 규칙에서 width:100% 만 제거) */
-@media only screen and (max-width: 1350px) {
-    .pdfDownload { margin-top: 3.5rem !important; /* width: 100% 제거 */ }
-}
+
 
 
 
