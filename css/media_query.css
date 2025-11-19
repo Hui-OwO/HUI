@@ -173,12 +173,12 @@
 
     .works-grid { display: unset !important; }
     .work_left, .work_right { width: 100% !important;  }
-    .work-card.flip-card { margin-bottom: 0 !important;}
+    
     .work-info { padding-top: 20px !important;}
-    .work_left .work-card:last-child, .work_right .work-card:last-child { margin-top: 0 !important;}
+    .work_left .work-card:last-child { margin-top: 0 !important; }
+    .work_right .work-card:last-child { margin: 0 !important; }
     .work_right .work-card:first-child { margin-top: 30px !important;}
-    .work_right .work-info p { height: 80px !important; }
-    .work-info p { margin-top: 10px !important; }
+    .work-info p { height: auto !important; margin-top: 10px !important; }
 
     footer { padding-top: 180px !important;}
     .bottom_link { padding: 3rem 0 !important; }
