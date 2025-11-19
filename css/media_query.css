@@ -156,9 +156,10 @@
     #header .logo { width: 75px; height: 40px; }
     #header .logo a { mask-repeat: no-repeat; mask-image: url("data:image/svg+xml,%3Csvg width='75' height='40' viewBox='0 0 75 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='15' height='25' fill='%23FFCC00'/%3E%3Crect x='30' width='15' height='25' fill='%23FFCC00'/%3E%3Crect x='15' y='25' width='15' height='15' fill='%23FFCC00'/%3E%3Crect x='45' y='25' width='15' height='15' fill='%23FFCC00'/%3E%3Crect x='60' width='15' height='25' fill='%23FFCC00'/%3E%3Crect y='10' width='45' height='5' fill='%23FFCC00'/%3E%3Crect x='15' y='35' width='45' height='5' fill='%23FFCC00'/%3E%3C/svg%3E%0A");}
 
+    .intro > div { margin: 60px 0 !important; }
 
     .intro > div { flex-direction: column-reverse; gap: auto; align-items: center; } /* 필요 시 활성화 */
-    .intro span { width: min(70vw, 420px) !important; aspect-ratio: 1 / 1; }
+    .intro span { width: min(70vw, 420px) !important; aspect-ratio: 1 / 1; margin-bottom: 30px; }
     .intro_text { width: calc(100% - 40px); text-align: center; }
 
     .pdfDownload {
@@ -170,7 +171,7 @@
 
     .smry_left_bottom { display: unset !important;}
     .box-size1, .box-size2 { width: 100% !important; height: 100% !important; margin-top: 20px;}
-    .exp, .int_center {height: auto !important;}
+    .vision, .exp, .int_center {height: auto !important;}
     .smry_right { flex-direction: column-reverse !important; }
 
     .works-grid { display: unset !important; }
