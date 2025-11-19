@@ -168,14 +168,18 @@
         font-size: clamp(1.6rem, 3.2vw, 2.2rem);
     }
 
+    .smry_left_bottom { display: unset !important;}
+    .box-size1, .box-size2 { width: 100% !important; height: 100% !important; margin-top: 20px;}
+    .exp, .int_center {height: auto !important;}
+    .smry_right { flex-direction: column-reverse !important; }
 
-
-
-
-
-
-
-
+    .works-grid { display: unset !important; }
+    .work_left, .work_right { width: 100% !important;  }
+    .work-card.flip-card { margin-bottom: 0 !important;}
+    .work-info { padding-top: 20px !important;}
+    .work_left .work-card:last-child, .work_right .work-card:last-child { margin-top: 0 !important;}
+    .work_right .work-card:first-child { margin-top: 30px !important;}
+    .work_right .work-info p { height: 80px !important; }
 
 
 
