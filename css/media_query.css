@@ -140,17 +140,11 @@
     .more-btn {padding: 20px 40px; font-size: 5rem; }
 }
 
-/* @media only screen and (max-width: 1024px) {
-    .more-btn {padding: 20px 40px; font-size: 5rem; }
+@media only screen and (max-width: 1000px) {
+    .bottom_link { display: block !important; }
+    .footer-left { margin-bottom: 20px !important; }
 }
- */
 
-
-
-/* 1440px 구간에서 .pdfDownload를 강제로 100%로 만들던 규칙 제거 */
-/* (기존에 있던 '.pdfDownload { width: 100% !important; }'는 삭제 또는 주석 처리) */
-
-/* 대신 작은 화면에서만 가득 채우도록 명시 */ /* 이 부분 삭제해도 이상해지지는 않음 */
 @media only screen and (max-width: 490px) {
     /* 로고 크기 조절 */
     #header .logo { width: 75px; height: 40px; }
@@ -187,8 +181,7 @@
     .work-info p { margin-top: 10px !important; }
 
     footer { padding-top: 180px !important;}
-.bottom_link { display: block !important; padding: 3rem 0 !important; }
-    .footer-left { margin-bottom: 20px !important; }
+    .bottom_link { padding: 3rem 0 !important; }
     .footer-left a, .sc_normal, .footer-right p { font-size: 1.6rem !important; }
     .footer-left a, .footer-right p { margin-right: 3rem !important; }
     /* .footer-left a:last-child { margin-right: 0 !important; } */
