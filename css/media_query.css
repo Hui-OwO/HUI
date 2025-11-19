@@ -159,7 +159,7 @@
     .intro > div { margin: 60px 0 !important; }
 
     .intro > div { flex-direction: column-reverse; gap: auto; align-items: center; } /* 필요 시 활성화 */
-    .intro span { width: min(70vw, 420px) !important; aspect-ratio: 1 / 1; margin-bottom: 30px; }
+    .intro span { width: min(70vw, 420px) !important; aspect-ratio: 1 / 1; margin-bottom: 40px; }
     .intro_text { width: calc(100% - 40px); text-align: center; }
 
     .pdfDownload {
@@ -169,6 +169,7 @@
         font-size: clamp(1.6rem, 3.2vw, 2.2rem);
     }
 
+    .works h2 {margin-bottom: 30px !important;}
     .smry_left_bottom { display: unset !important;}
     .box-size1, .box-size2 { width: 100% !important; height: 100% !important; margin-top: 20px;}
     .vision, .exp, .int_center {height: auto !important;}
@@ -187,7 +188,7 @@
     .bottom_link { display: block !important; }
     .footer-left { margin-bottom: 20px !important; }
     .footer-left a, .footer-right p { font-size: 1.6rem !important; margin-right: 30px !important; }
-    .footer-left a:last-child { margin-right: 0 !important; }
+    /* .footer-left a:last-child { margin-right: 0 !important; } */
     .footer-right { justify-content: space-between;}
 }
 
